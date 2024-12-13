@@ -1,0 +1,105 @@
+[gd_scene load_steps=24 format=3 uid="uid://b6f5c7kng8utn"]
+
+[ext_resource type="Script" path="res://Characters/huebird.gd" id="1_dvugg"]
+[ext_resource type="Texture2D" uid="uid://bujr8ssmj1unp" path="res://Art/Bird/Bird01/Bird01_00.png" id="1_ytlox"]
+[ext_resource type="Texture2D" uid="uid://d3c5ki7f84lg" path="res://Art/Bird/Bird01/Bird01_01.png" id="2_g1k55"]
+[ext_resource type="Texture2D" uid="uid://0fdx2ck0menh" path="res://Art/Bird/Bird01/Bird01_02.png" id="3_leimy"]
+[ext_resource type="Texture2D" uid="uid://cx2oamtq4rod6" path="res://Art/Bird/Bird01/Bird01_03.png" id="4_0a7ky"]
+[ext_resource type="Texture2D" uid="uid://dxqkwld0cf1al" path="res://Art/Bird/Bird01/Bird01_04.png" id="5_8ef5j"]
+[ext_resource type="Texture2D" uid="uid://gce6wtdjduh1" path="res://Art/Bird/Bird01/Bird01_05.png" id="6_p3ujt"]
+[ext_resource type="Texture2D" uid="uid://2tuqgebm7e4s" path="res://Art/Bird/Bird01/Bird01_06.png" id="7_lmg60"]
+[ext_resource type="Texture2D" uid="uid://cb804fbf13c1i" path="res://Art/Bird/Bird01/Bird01_07.png" id="8_xdjha"]
+[ext_resource type="Texture2D" uid="uid://c3lfriqifgqsm" path="res://Art/Bird/Bird01/Bird01_08.png" id="9_u3p7y"]
+[ext_resource type="Texture2D" uid="uid://bk0ovg5uwyaxg" path="res://Art/Bird/Bird01/Bird01_09.png" id="10_dj228"]
+[ext_resource type="Texture2D" uid="uid://crimdbbyxvo1j" path="res://Art/Bird/Bird01/Bird01_10.png" id="11_gy7jh"]
+[ext_resource type="Texture2D" uid="uid://fviyav4csstm" path="res://Art/Bird/Bird01/Bird01_11.png" id="12_7w6gi"]
+[ext_resource type="Texture2D" uid="uid://ctaqqydrsbjuu" path="res://Art/Bird/Bird01/Bird01_12.png" id="13_16x50"]
+[ext_resource type="Texture2D" uid="uid://cko0y1w5cpqpb" path="res://Art/Bird/Bird01/Bird01_13.png" id="14_w5ndh"]
+[ext_resource type="Texture2D" uid="uid://e4p6pn2pfiv0" path="res://Art/Bird/Bird01/Bird01_14.png" id="15_1j6lb"]
+[ext_resource type="Texture2D" uid="uid://dk3b4o5copusr" path="res://Art/Bird/Bird01/Bird01_15.png" id="16_s5lwe"]
+[ext_resource type="Texture2D" uid="uid://cjvlf02hahuq8" path="res://Art/Bird/Bird01/Bird01_16.png" id="17_wndtc"]
+[ext_resource type="Texture2D" uid="uid://0pywsnxg8bqu" path="res://Art/Bird/Bird01/Bird01_17.png" id="18_8ywy4"]
+[ext_resource type="Texture2D" uid="uid://bte31i2l50xbt" path="res://Art/Bird/Bird01/Bird01_18.png" id="19_kq7h1"]
+[ext_resource type="Texture2D" uid="uid://cdnycienixa4q" path="res://Art/Bird/Bird01/Bird01_19.png" id="20_algdm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lb4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ytlox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g1k55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_leimy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0a7ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8ef5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p3ujt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lmg60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xdjha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u3p7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dj228")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gy7jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7w6gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_16x50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_w5ndh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1j6lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s5lwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wndtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8ywy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kq7h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_algdm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 29.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ba7oa"]
+radius = 23.3452
+
+[node name="Huebird" type="CharacterBody2D"]
+script = ExtResource("1_dvugg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7lb4t")
+frame_progress = 0.643588
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 1)
+shape = SubResource("CircleShape2D_ba7oa")
