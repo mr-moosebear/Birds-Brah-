@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6f5c7kng8utn"]
+[gd_scene load_steps=25 format=3 uid="uid://b6f5c7kng8utn"]
 
 [ext_resource type="Script" path="res://Characters/huebird.gd" id="1_dvugg"]
 [ext_resource type="Texture2D" uid="uid://bujr8ssmj1unp" path="res://Art/Bird/Bird01/Bird01_00.png" id="1_ytlox"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://0pywsnxg8bqu" path="res://Art/Bird/Bird01/Bird01_17.png" id="18_8ywy4"]
 [ext_resource type="Texture2D" uid="uid://bte31i2l50xbt" path="res://Art/Bird/Bird01/Bird01_18.png" id="19_kq7h1"]
 [ext_resource type="Texture2D" uid="uid://cdnycienixa4q" path="res://Art/Bird/Bird01/Bird01_19.png" id="20_algdm"]
+[ext_resource type="Script" path="res://Components/GravityComponent.gd" id="22_h66q4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lb4t"]
 animations = [{
@@ -98,8 +99,12 @@ script = ExtResource("1_dvugg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7lb4t")
-frame_progress = 0.643588
+frame_progress = 0.885939
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, 1)
 shape = SubResource("CircleShape2D_ba7oa")
+
+[node name="CompGravity" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("22_h66q4")
+character = NodePath("..")

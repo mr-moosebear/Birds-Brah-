@@ -6,7 +6,6 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	velocity += get_gravity() * delta
 	move_and_slide()
 
 func get_input() -> void:
