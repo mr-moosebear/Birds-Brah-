@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var character : CharacterBody2D = $Huebird
 
 func _process(delta: float) -> void:

@@ -98,12 +98,8 @@ radius = 23.3452
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfrm7"]
 radius = 26.0
 
-[node name="Huebird" type="CharacterBody2D"]
+[node name="Huebird" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_dvugg")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_7lb4t")
-frame_progress = 0.364021
 
 [node name="CompGravity" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("22_h66q4")
@@ -112,6 +108,10 @@ character = NodePath("..")
 [node name="CompFowardMovement" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("23_vua3h")
 character = NodePath("..")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7lb4t")
+frame_progress = 0.364021
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(480, 0)

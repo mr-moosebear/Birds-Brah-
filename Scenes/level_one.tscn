@@ -16,8 +16,8 @@ motion_offset = Vector2(1000, 0)
 motion_mirroring = Vector2(400, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 400.0
+offset_bottom = 715.0
 texture = ExtResource("1_py34o")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
