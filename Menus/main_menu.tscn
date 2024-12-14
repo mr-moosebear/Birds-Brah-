@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvemfthu6ybjn"]
+[gd_scene load_steps=6 format=3 uid="uid://cvemfthu6ybjn"]
 
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="1_pk8bx"]
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_rfub5"]
 [ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="2_a1a3b"]
 [ext_resource type="Texture2D" uid="uid://b83kn52sxck67" path="res://Art/UserInterfaces/Continue.png" id="2_vq2p6"]
+[ext_resource type="Texture2D" uid="uid://c6qlrmdickyfa" path="res://Art/UserInterfaces/BirdSelectButton.png" id="5_vtwtd"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_rfub5")
@@ -37,14 +38,40 @@ theme_override_font_sizes/font_size = 84
 text = "BIRDS! BRAH!"
 
 [node name="PlayButton" type="Button" parent="."]
-offset_left = 547.0
-offset_top = 282.0
-offset_right = 651.0
-offset_bottom = 385.0
+offset_left = 728.0
+offset_top = 280.0
+offset_right = 832.0
+offset_bottom = 383.0
 icon = ExtResource("2_vq2p6")
 
-[node name="Button2" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="BirdSelectButton" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 288.0
+offset_right = 368.0
+offset_bottom = 391.0
+icon = ExtResource("5_vtwtd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 168.0
+offset_top = 424.0
+offset_right = 467.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0.333333, 0.784314, 0.564706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pk8bx")
+theme_override_font_sizes/font_size = 36
+text = "Bird Select"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 424.0
+offset_right = 864.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0.333333, 0.784314, 0.564706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pk8bx")
+theme_override_font_sizes/font_size = 36
+text = "Start"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BirdSelectButton" to="." method="_on_bird_select_button_pressed"]

@@ -2,12 +2,13 @@ extends Node2D
 
 @onready var character : CharacterBody2D = $Huebird
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("flap"):
 		print_shit()
-	
-func update_player() -> void:
-	await get_tree().create_timer(3.0).timeout
+
+
+
 
 func print_shit() -> void:
 	print("Character Postion is: ", character.position)
