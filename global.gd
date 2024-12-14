@@ -11,5 +11,5 @@ func save_game_score():
 
 func load_score() -> String:
 	var file = FileAccess.open("res://PlayerData/savegame.txt", FileAccess.READ)
-	var str = file.get_line()
-	return str
+	var string = file.get_line()
+	return string

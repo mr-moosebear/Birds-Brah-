@@ -8,8 +8,6 @@ func _process(delta: float) -> void:
 		print_shit()
 
 
-
-
 func print_shit() -> void:
 	print("Character Postion is: ", character.position)
 	print("Camera Viewport is: ", $Huebird/Camera2D.get_viewport_rect())
