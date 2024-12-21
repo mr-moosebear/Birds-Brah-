@@ -1,12 +1,19 @@
-[gd_resource type="SpriteFrames" load_steps=61 format=3 uid="uid://cusxl5pvheuma"]
+[gd_resource type="SpriteFrames" load_steps=68 format=3 uid="uid://cusxl5pvheuma"]
 
 [ext_resource type="Texture2D" uid="uid://bt76uyujwjxjk" path="res://Art/Bird/Bird02/Bird2_00.png" id="1_35136"]
+[ext_resource type="Texture2D" uid="uid://csvpcxal31w6m" path="res://Art/DeathImages/1.png" id="1_erswe"]
 [ext_resource type="Texture2D" uid="uid://dsqw2s0ho8dsy" path="res://Art/Bird/Bird02/Bird2_01.png" id="2_8yrnf"]
+[ext_resource type="Texture2D" uid="uid://33303q05c5hi" path="res://Art/DeathImages/2.png" id="2_36mmi"]
+[ext_resource type="Texture2D" uid="uid://bv0773cgupou5" path="res://Art/DeathImages/3.png" id="3_0mrbo"]
 [ext_resource type="Texture2D" uid="uid://dau08lqmfoqc7" path="res://Art/Bird/Bird02/Bird2_02.png" id="3_pq8fb"]
 [ext_resource type="Texture2D" uid="uid://0c57i5y46eim" path="res://Art/Bird/Bird02/Bird2_03.png" id="4_8n2nf"]
+[ext_resource type="Texture2D" uid="uid://dcn17wbbkwrcl" path="res://Art/DeathImages/4.png" id="4_ck632"]
+[ext_resource type="Texture2D" uid="uid://c24gqiitj816f" path="res://Art/DeathImages/5.png" id="5_qyf5u"]
 [ext_resource type="Texture2D" uid="uid://1kfpiq0xg43p" path="res://Art/Bird/Bird02/Bird2_04.png" id="5_yqmud"]
 [ext_resource type="Texture2D" uid="uid://drmwmudflw71j" path="res://Art/Bird/Bird02/Bird2_05.png" id="6_vt3x5"]
+[ext_resource type="Texture2D" uid="uid://ikkem1t1nrrp" path="res://Art/DeathImages/6.png" id="6_ywo3y"]
 [ext_resource type="Texture2D" uid="uid://dycy5dws8q0i4" path="res://Art/Bird/Bird02/Bird2_06.png" id="7_2jwgq"]
+[ext_resource type="Texture2D" uid="uid://b1f4h2fnvkp6r" path="res://Art/DeathImages/7.png" id="7_jdtd6"]
 [ext_resource type="Texture2D" uid="uid://44ll0mr45n6b" path="res://Art/Bird/Bird02/Bird2_07.png" id="8_58mdd"]
 [ext_resource type="Texture2D" uid="uid://djut477sguo2c" path="res://Art/Bird/Bird02/Bird2_08.png" id="9_xxs1f"]
 [ext_resource type="Texture2D" uid="uid://1vqtdhnowubx" path="res://Art/Bird/Bird02/Bird2_09.png" id="10_dcmer"]
@@ -63,6 +70,32 @@
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_erswe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_36mmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0mrbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ck632")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qyf5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywo3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jdtd6")
+}],
+"loop": false,
+"name": &"death",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_35136")

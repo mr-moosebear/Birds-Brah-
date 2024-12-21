@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhahqigq4hge"]
+[gd_scene load_steps=5 format=3 uid="uid://dhahqigq4hge"]
 
 [ext_resource type="PackedScene" uid="uid://dmo7nycj4xajd" path="res://Scenes/level_one.tscn" id="1_6bng1"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_sfhd0"]
-[ext_resource type="PackedScene" uid="uid://b6f5c7kng8utn" path="res://Characters/huebird.tscn" id="2_e8qiv"]
+[ext_resource type="PackedScene" uid="uid://cisi06toscbnv" path="res://Characters/bird_character.tscn" id="3_nv52w"]
+[ext_resource type="PackedScene" uid="uid://xn7mpwope1db" path="res://UI/score_ui.tscn" id="4_li3ic"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_sfhd0")
 
 [node name="LevelOne" parent="." instance=ExtResource("1_6bng1")]
 
-[node name="Huebird" parent="." instance=ExtResource("2_e8qiv")]
+[node name="BirdCharacter" parent="." instance=ExtResource("3_nv52w")]
+position = Vector2(147, 82)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="ScoreUI" parent="." instance=ExtResource("4_li3ic")]
+
+[connection signal="hit" from="BirdCharacter" to="." method="_on_bird_character_hit"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

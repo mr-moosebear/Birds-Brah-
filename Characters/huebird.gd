@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY = -400.0
 
-
-
 func _ready() -> void:
 	$AnimatedSprite2D.play(Global.bird)
 

@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmo7nycj4xajd"]
+[gd_scene load_steps=3 format=3 uid="uid://dmo7nycj4xajd"]
 
 [ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="1_py34o"]
 [ext_resource type="Script" path="res://Scenes/level_one.gd" id="1_tvp1n"]
-[ext_resource type="PackedScene" uid="uid://db4fg8f4uh30r" path="res://Objects/top_obstacle.tscn" id="2_v7f84"]
-[ext_resource type="PackedScene" uid="uid://dl7rtpvan5t73" path="res://Objects/bottom_obstacle.tscn" id="3_jl7dy"]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_tvp1n")
@@ -32,9 +30,3 @@ offset_left = 800.0
 offset_right = 1200.0
 offset_bottom = 715.0
 texture = ExtResource("1_py34o")
-
-[node name="BottomObstacle" parent="." instance=ExtResource("3_jl7dy")]
-position = Vector2(1336, 544)
-
-[node name="TopObstacle" parent="." instance=ExtResource("2_v7f84")]
-position = Vector2(1336, 168)

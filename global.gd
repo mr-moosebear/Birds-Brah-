@@ -4,9 +4,10 @@ var bird : String = "huebird"
 var score : int = 0
 
 func convert_score_to_string(i: int) -> String:
-	var s = str(i)
-	return s 
+	return str(i) 
 
+# NOTE: Both save and load called in Game_Over Menu
+# Would Like to create a Leader board
 func save_game_score():
 	var scr = convert_score_to_string(score)
 	#var save_file = FileAccess.open("res://PlayerData/savegame.txt", FileAccess.WRITE)

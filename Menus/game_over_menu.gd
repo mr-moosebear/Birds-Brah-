@@ -2,8 +2,9 @@ extends Node2D
 
 
 func _ready() -> void:
-	var str = Global.load_score()
-	$ScoreLabel.text = str
+	Global.save_game_score()
+	var string = Global.load_score()
+	$ScoreLabel.text = string
 	Global.score = 0
 
 func _on_bird_select_button_pressed() -> void:
