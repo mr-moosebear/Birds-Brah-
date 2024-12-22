@@ -7,6 +7,6 @@ extends Node
 
 var speed : float = -300.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	character.velocity.x = speed
 	character.move_and_slide()

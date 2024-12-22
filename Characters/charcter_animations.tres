@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=68 format=3 uid="uid://cusxl5pvheuma"]
+[gd_resource type="SpriteFrames" load_steps=108 format=3 uid="uid://cusxl5pvheuma"]
 
 [ext_resource type="Texture2D" uid="uid://bt76uyujwjxjk" path="res://Art/Bird/Bird02/Bird2_00.png" id="1_35136"]
 [ext_resource type="Texture2D" uid="uid://csvpcxal31w6m" path="res://Art/DeathImages/1.png" id="1_erswe"]
@@ -34,26 +34,66 @@
 [ext_resource type="Texture2D" uid="uid://dxqkwld0cf1al" path="res://Art/Bird/Bird01/Bird01_04.png" id="25_xwmog"]
 [ext_resource type="Texture2D" uid="uid://gce6wtdjduh1" path="res://Art/Bird/Bird01/Bird01_05.png" id="26_gvo06"]
 [ext_resource type="Texture2D" uid="uid://2tuqgebm7e4s" path="res://Art/Bird/Bird01/Bird01_06.png" id="27_5rdtv"]
+[ext_resource type="Texture2D" uid="uid://bf457d8kqcvdb" path="res://Art/Bird/Bird04/Bird4_00.png" id="28_4s2ky"]
 [ext_resource type="Texture2D" uid="uid://cb804fbf13c1i" path="res://Art/Bird/Bird01/Bird01_07.png" id="28_6tcsl"]
+[ext_resource type="Texture2D" uid="uid://bp1w7qfxd7dfq" path="res://Art/Bird/Bird03/Bird3_00.png" id="28_iout2"]
 [ext_resource type="Texture2D" uid="uid://c3lfriqifgqsm" path="res://Art/Bird/Bird01/Bird01_08.png" id="29_mulin"]
+[ext_resource type="Texture2D" uid="uid://ddlgwa3dxwvem" path="res://Art/Bird/Bird03/Bird3_01.png" id="29_o4mh5"]
+[ext_resource type="Texture2D" uid="uid://dij2rk6g5xdnw" path="res://Art/Bird/Bird04/Bird4_01.png" id="29_us8fg"]
 [ext_resource type="Texture2D" uid="uid://bk0ovg5uwyaxg" path="res://Art/Bird/Bird01/Bird01_09.png" id="30_8tmmb"]
+[ext_resource type="Texture2D" uid="uid://bmsyqcgmd18y8" path="res://Art/Bird/Bird04/Bird4_02.png" id="30_lefxs"]
+[ext_resource type="Texture2D" uid="uid://44pp606it5o1" path="res://Art/Bird/Bird03/Bird3_02.png" id="30_wi6vw"]
+[ext_resource type="Texture2D" uid="uid://bv7raa531275f" path="res://Art/Bird/Bird04/Bird4_03.png" id="31_4r5vm"]
+[ext_resource type="Texture2D" uid="uid://f86ecvn8ycjc" path="res://Art/Bird/Bird03/Bird3_03.png" id="31_j11f2"]
 [ext_resource type="Texture2D" uid="uid://crimdbbyxvo1j" path="res://Art/Bird/Bird01/Bird01_10.png" id="31_ug82s"]
+[ext_resource type="Texture2D" uid="uid://c12tqter5a4id" path="res://Art/Bird/Bird03/Bird3_04.png" id="32_k5q7k"]
+[ext_resource type="Texture2D" uid="uid://dt4727jeu2n4l" path="res://Art/Bird/Bird04/Bird4_04.png" id="32_lpwlr"]
 [ext_resource type="Texture2D" uid="uid://fviyav4csstm" path="res://Art/Bird/Bird01/Bird01_11.png" id="32_rifgm"]
 [ext_resource type="Texture2D" uid="uid://ctaqqydrsbjuu" path="res://Art/Bird/Bird01/Bird01_12.png" id="33_7t4rv"]
+[ext_resource type="Texture2D" uid="uid://dhjd36ti16bek" path="res://Art/Bird/Bird04/Bird4_05.png" id="33_dthsq"]
+[ext_resource type="Texture2D" uid="uid://rjbrw4ri8qmf" path="res://Art/Bird/Bird03/Bird3_05.png" id="33_ni3yl"]
+[ext_resource type="Texture2D" uid="uid://b2uwa0idvnpus" path="res://Art/Bird/Bird04/Bird4_06.png" id="34_pkwsq"]
 [ext_resource type="Texture2D" uid="uid://cko0y1w5cpqpb" path="res://Art/Bird/Bird01/Bird01_13.png" id="34_sr1nd"]
+[ext_resource type="Texture2D" uid="uid://b5vqwr8t2xaiq" path="res://Art/Bird/Bird03/Bird3_06.png" id="34_yxjws"]
+[ext_resource type="Texture2D" uid="uid://cs8b1phvesko7" path="res://Art/Bird/Bird03/Bird3_07.png" id="35_1y1ms"]
+[ext_resource type="Texture2D" uid="uid://dihll5617unlm" path="res://Art/Bird/Bird04/Bird4_07.png" id="35_cx7ip"]
 [ext_resource type="Texture2D" uid="uid://e4p6pn2pfiv0" path="res://Art/Bird/Bird01/Bird01_14.png" id="35_if8u3"]
+[ext_resource type="Texture2D" uid="uid://g002258iog1r" path="res://Art/Bird/Bird03/Bird3_08.png" id="36_4lnfg"]
 [ext_resource type="Texture2D" uid="uid://dk3b4o5copusr" path="res://Art/Bird/Bird01/Bird01_15.png" id="36_jv7ln"]
+[ext_resource type="Texture2D" uid="uid://djvb86kcvoiiy" path="res://Art/Bird/Bird04/Bird4_08.png" id="36_vngb1"]
 [ext_resource type="Texture2D" uid="uid://cjvlf02hahuq8" path="res://Art/Bird/Bird01/Bird01_16.png" id="37_6ovhy"]
+[ext_resource type="Texture2D" uid="uid://c8g04v1ejc3rt" path="res://Art/Bird/Bird04/Bird4_09.png" id="37_davgt"]
+[ext_resource type="Texture2D" uid="uid://dpfpp4qlvjc6l" path="res://Art/Bird/Bird03/Bird3_09.png" id="37_w6ki6"]
+[ext_resource type="Texture2D" uid="uid://b21nukdxswqdf" path="res://Art/Bird/Bird03/Bird3_10.png" id="38_imdge"]
+[ext_resource type="Texture2D" uid="uid://bba3pduvpevnf" path="res://Art/Bird/Bird04/Bird4_10.png" id="38_sbbbt"]
 [ext_resource type="Texture2D" uid="uid://0pywsnxg8bqu" path="res://Art/Bird/Bird01/Bird01_17.png" id="38_ylje7"]
+[ext_resource type="Texture2D" uid="uid://dhe3hh712j18u" path="res://Art/Bird/Bird04/Bird4_11.png" id="39_3fdxt"]
+[ext_resource type="Texture2D" uid="uid://byt6yxtidhaml" path="res://Art/Bird/Bird03/Bird3_11.png" id="39_3oyfl"]
 [ext_resource type="Texture2D" uid="uid://bte31i2l50xbt" path="res://Art/Bird/Bird01/Bird01_18.png" id="39_wvr3e"]
+[ext_resource type="Texture2D" uid="uid://7cfcmux8drd0" path="res://Art/Bird/Bird04/Bird4_12.png" id="40_15eeu"]
+[ext_resource type="Texture2D" uid="uid://buo4kcub5s7gs" path="res://Art/Bird/Bird03/Bird3_12.png" id="40_frc7a"]
 [ext_resource type="Texture2D" uid="uid://cdnycienixa4q" path="res://Art/Bird/Bird01/Bird01_19.png" id="40_qac0l"]
+[ext_resource type="Texture2D" uid="uid://c5qaxje5hi1dw" path="res://Art/Bird/Bird04/Bird4_13.png" id="41_qmohi"]
 [ext_resource type="Texture2D" uid="uid://d26qoff4iln2x" path="res://Art/Bird/Bird05/Bird5_00.png" id="41_tovwo"]
+[ext_resource type="Texture2D" uid="uid://df6c22icdf6r4" path="res://Art/Bird/Bird03/Bird3_13.png" id="41_w3kfq"]
 [ext_resource type="Texture2D" uid="uid://dvqoyrdx43i1s" path="res://Art/Bird/Bird05/Bird5_01.png" id="42_hknsd"]
+[ext_resource type="Texture2D" uid="uid://b3ka3vjo4fiha" path="res://Art/Bird/Bird03/Bird3_14.png" id="42_od4qk"]
+[ext_resource type="Texture2D" uid="uid://cr0g0oslrhc6d" path="res://Art/Bird/Bird04/Bird4_14.png" id="42_xb5t0"]
+[ext_resource type="Texture2D" uid="uid://djrm4x8m5w5a3" path="res://Art/Bird/Bird03/Bird3_15.png" id="43_81dan"]
+[ext_resource type="Texture2D" uid="uid://6tbqymosc067" path="res://Art/Bird/Bird04/Bird4_15.png" id="43_en4le"]
 [ext_resource type="Texture2D" uid="uid://bs0upbw3oc7ah" path="res://Art/Bird/Bird05/Bird5_02.png" id="43_iohdu"]
 [ext_resource type="Texture2D" uid="uid://dqx3s03l8n5er" path="res://Art/Bird/Bird05/Bird5_03.png" id="44_k2vm4"]
+[ext_resource type="Texture2D" uid="uid://cmt2hxvqk3ljn" path="res://Art/Bird/Bird03/Bird3_16.png" id="44_pe257"]
+[ext_resource type="Texture2D" uid="uid://ddar3d16km6fa" path="res://Art/Bird/Bird04/Bird4_16.png" id="44_pgtdl"]
+[ext_resource type="Texture2D" uid="uid://dgd1d0li2xekm" path="res://Art/Bird/Bird04/Bird4_17.png" id="45_2thi7"]
+[ext_resource type="Texture2D" uid="uid://b7y3xgru8aasp" path="res://Art/Bird/Bird03/Bird3_17.png" id="45_7sa6g"]
 [ext_resource type="Texture2D" uid="uid://b108vhek0wqm0" path="res://Art/Bird/Bird05/Bird5_04.png" id="45_qas5b"]
+[ext_resource type="Texture2D" uid="uid://b33rvigyfa3be" path="res://Art/Bird/Bird03/Bird3_18.png" id="46_ehlvp"]
 [ext_resource type="Texture2D" uid="uid://bj7iqfkv266ha" path="res://Art/Bird/Bird05/Bird5_05.png" id="46_fxhi8"]
+[ext_resource type="Texture2D" uid="uid://mg8rnyoqvp2" path="res://Art/Bird/Bird04/Bird4_18.png" id="46_wwdba"]
+[ext_resource type="Texture2D" uid="uid://dwrc86jm1s5qq" path="res://Art/Bird/Bird04/Bird4_19.png" id="47_dh3v8"]
 [ext_resource type="Texture2D" uid="uid://qqndc0s1js4h" path="res://Art/Bird/Bird05/Bird5_06.png" id="47_nwwfm"]
+[ext_resource type="Texture2D" uid="uid://xq85pn1dtrvm" path="res://Art/Bird/Bird03/Bird3_19.png" id="47_r7cwl"]
 [ext_resource type="Texture2D" uid="uid://csgtcwypwq8sm" path="res://Art/Bird/Bird05/Bird5_07.png" id="48_6q27w"]
 [ext_resource type="Texture2D" uid="uid://c7j10rdqd6nah" path="res://Art/Bird/Bird05/Bird5_08.png" id="49_qsumy"]
 [ext_resource type="Texture2D" uid="uid://cda5oka72fbng" path="res://Art/Bird/Bird05/Bird5_09.png" id="50_irq1r"]
@@ -159,6 +199,136 @@ animations = [{
 }],
 "loop": true,
 "name": &"duck_norris",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_4s2ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_us8fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lefxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4r5vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lpwlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_dthsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pkwsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_cx7ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vngb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_davgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sbbbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3fdxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_15eeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qmohi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_xb5t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_en4le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_pgtdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_2thi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_wwdba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_dh3v8")
+}],
+"loop": true,
+"name": &"emu_watson",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_iout2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_o4mh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_wi6vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_j11f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_k5q7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ni3yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_yxjws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1y1ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4lnfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_w6ki6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_imdge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3oyfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_frc7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_w3kfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_od4qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_81dan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_pe257")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_7sa6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ehlvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_r7cwl")
+}],
+"loop": true,
+"name": &"featherlock_holmes",
 "speed": 25.0
 }, {
 "frames": [{

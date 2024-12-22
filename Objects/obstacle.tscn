@@ -9,6 +9,7 @@
 size = Vector2(80, 336)
 
 [node name="Obstacle" type="CharacterBody2D" groups=["object"]]
+slide_on_ceiling = false
 script = ExtResource("1_cx8vt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

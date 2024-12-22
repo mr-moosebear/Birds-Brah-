@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjceu0a2gya3"
+path="res://.godot/imported/Ethnic Beat.ogg-0ff96697482e9cb6c0211fce79f02d49.oggvorbisstr"
+
+[deps]
+
+source_file="res://Art/Sounds/Ethnic Beat.ogg"
+dest_files=["res://.godot/imported/Ethnic Beat.ogg-0ff96697482e9cb6c0211fce79f02d49.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4h6r5ua0xumx"]
+[gd_scene load_steps=8 format=3 uid="uid://4h6r5ua0xumx"]
 
 [ext_resource type="Script" path="res://Menus/character_select_menu.gd" id="1_32wcj"]
 [ext_resource type="Texture2D" uid="uid://y2wmj7pheuhy" path="res://Art/Backgrounds/4.png" id="1_nre6n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bx5ur7iixiq3j" path="res://Art/UserInterfaces/RightArrow.png" id="4_5g20d"]
 [ext_resource type="SpriteFrames" uid="uid://cusxl5pvheuma" path="res://Characters/charcter_animations.tres" id="5_lry43"]
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="6_xf8et"]
+[ext_resource type="AudioStream" uid="uid://djxybyeilho4a" path="res://Art/Sounds/Choppin.ogg" id="7_racgn"]
 
 [node name="CharacterSelectMenu" type="Node2D"]
 script = ExtResource("1_32wcj")
@@ -44,7 +45,7 @@ icon = ExtResource("4_5g20d")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(600, 296)
 sprite_frames = ExtResource("5_lry43")
-animation = &"kiwi_reeves"
+animation = &"duck_norris"
 
 [node name="SelectButton" type="Button" parent="."]
 offset_left = 448.0
@@ -67,6 +68,13 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_xf8et")
 theme_override_font_sizes/font_size = 64
 text = "hue birdman"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_racgn")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]

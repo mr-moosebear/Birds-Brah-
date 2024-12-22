@@ -4,7 +4,6 @@ extends Node2D
 @onready var collider = $BirdCharacter/CollisionShape2D
 
 
-
 func _ready() -> void:
 	get_random_spawn_point()
 	add_object_scene()
@@ -33,7 +32,7 @@ func _on_spawn_timer_timeout() -> void:
 	add_object_scene()
 
 #NOTE: call_deferred is to remove everthing after 
-# the next physcics process
+# the next physics process
 func _on_bird_character_hit() -> void:
 	var node_children = get_children()
 	for node in node_children:

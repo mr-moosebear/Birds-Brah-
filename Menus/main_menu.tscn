@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvemfthu6ybjn"]
+[gd_scene load_steps=7 format=3 uid="uid://cvemfthu6ybjn"]
 
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="1_pk8bx"]
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_rfub5"]
 [ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="2_a1a3b"]
 [ext_resource type="Texture2D" uid="uid://b83kn52sxck67" path="res://Art/UserInterfaces/Continue.png" id="2_vq2p6"]
 [ext_resource type="Texture2D" uid="uid://c6qlrmdickyfa" path="res://Art/UserInterfaces/BirdSelectButton.png" id="5_vtwtd"]
+[ext_resource type="AudioStream" uid="uid://djxybyeilho4a" path="res://Art/Sounds/Choppin.ogg" id="6_6u5w0"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_rfub5")
@@ -72,6 +73,11 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_pk8bx")
 theme_override_font_sizes/font_size = 36
 text = "Start"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6u5w0")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BirdSelectButton" to="." method="_on_bird_select_button_pressed"]

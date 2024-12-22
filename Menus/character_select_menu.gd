@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
-const BIRDS : Array = ["huebird", "duck_norris", "kiwi_reeves"]
+const BIRDS : Array = ["huebird", "duck_norris", "kiwi_reeves",
+"featherlock_holmes", "emu_watson"]
 var bird_index : int = 0
 
 func _ready() -> void:
@@ -16,6 +17,10 @@ func show_bird_name() -> void:
 			$Label.text = "Duck Norris"
 		"kiwi_reeves":
 			$Label.text = "Kiwi Reeves"
+		"featherlock_holmes":
+			$Label.text = "Featherlock Holmes"
+		"emu_watson":
+			$Label.text = "Emu Watson"
 		_:
 			print("Invalid")
 
