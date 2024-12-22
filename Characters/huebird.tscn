@@ -27,9 +27,7 @@ animation = &"duck_norris"
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(480, 0)
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 1)
 shape = SubResource("CircleShape2D_hfrm7")
 
@@ -38,5 +36,3 @@ offset_left = 421.0
 offset_top = 240.0
 offset_right = 421.0
 offset_bottom = 240.0
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
