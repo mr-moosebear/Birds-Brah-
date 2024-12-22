@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6f5c7kng8utn"]
+[gd_scene load_steps=6 format=3 uid="uid://b6f5c7kng8utn"]
 
 [ext_resource type="Script" path="res://Characters/huebird.gd" id="1_dvugg"]
 [ext_resource type="SpriteFrames" uid="uid://cusxl5pvheuma" path="res://Characters/charcter_animations.tres" id="4_mfr1p"]
-[ext_resource type="PackedScene" uid="uid://xn7mpwope1db" path="res://UI/score_ui.tscn" id="5_4cuvd"]
 [ext_resource type="Script" path="res://Components/GravityComponent.gd" id="22_h66q4"]
 [ext_resource type="Script" path="res://Components/FowardComponent.gd" id="23_vua3h"]
 
@@ -27,9 +26,3 @@ animation = &"duck_norris"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 1)
 shape = SubResource("CircleShape2D_hfrm7")
-
-[node name="ScoreUI" parent="." instance=ExtResource("5_4cuvd")]
-offset_left = 421.0
-offset_top = 240.0
-offset_right = 421.0
-offset_bottom = 240.0
