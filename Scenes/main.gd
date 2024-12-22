@@ -3,6 +3,8 @@ extends Node2D
 @onready var character : CharacterBody2D = $BirdCharacter
 @onready var collider = $BirdCharacter/CollisionShape2D
 
+
+
 func _ready() -> void:
 	get_random_spawn_point()
 	add_object_scene()
@@ -22,9 +24,18 @@ func add_object_scene() -> void:
 		scene.position = get_random_spawn_point()
 		print("Spawn a pipe at: ", scene.position)
 
+func add_game_over_scene() -> void:
+	var scene_path = preload("res://Menus/game_over_menu.tscn")
+	var scene = scene_path.instantiate()
+	add_child(scene)
+
 func _on_spawn_timer_timeout() -> void:
 	add_object_scene()
 
+#NOTE: call_deferred is to remove everthing after 
+# the next physcics process
 func _on_bird_character_hit() -> void:
-	character.queue_free()
-	get_tree().change_scene_to_file("res://Menus/game_over_menu.tscn")
+	var node_children = get_children()
+	for node in node_children:
+		node.call_deferred("queue_free")
+	add_game_over_scene()
