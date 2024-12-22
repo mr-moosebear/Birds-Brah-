@@ -24,9 +24,6 @@ character = NodePath("..")
 sprite_frames = ExtResource("4_mfr1p")
 animation = &"duck_norris"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(480, 0)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 1)
 shape = SubResource("CircleShape2D_hfrm7")

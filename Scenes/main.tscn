@@ -19,5 +19,8 @@ autostart = true
 
 [node name="ScoreUI" parent="." instance=ExtResource("4_li3ic")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [connection signal="hit" from="BirdCharacter" to="." method="_on_bird_character_hit"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
