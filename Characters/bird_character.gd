@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 const JUMP_VELOCITY = -400.0
+const ROTATION_DEG_MAX = 40
 signal hit
 
 func _ready() -> void:
 	$AnimatedSprite2D.play(Global.bird)
 
 func _physics_process(_delta: float) -> void:
+	set_rotation_degrees(clamp(velocity.y, JUMP_VELOCITY, -JUMP_VELOCITY) / abs(JUMP_VELOCITY) * ROTATION_DEG_MAX)
 	get_input()
 	move_and_slide()
 
