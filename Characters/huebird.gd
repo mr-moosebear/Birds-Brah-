@@ -13,8 +13,3 @@ func get_input() -> void:
 	if Input.is_action_just_pressed("flap"):
 		velocity.y = JUMP_VELOCITY
 		Global.score += 100
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	Global.save_game_score()
-	get_tree().change_scene_to_file("res://Menus/game_over_menu.tscn")
-	
