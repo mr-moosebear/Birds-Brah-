@@ -16,8 +16,7 @@ func get_input() -> void:
 		Global.score += 100
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("Player hit by ", body.name)
-	if body.is_in_group("object"):
+	if body is StaticBody2D && (body as StaticBody2D).is_in_group("obstacles"):
 		$AnimatedSprite2D.play("death")
 		hit.emit()
 # Must be deferred as we can't change physics properties on a physics callback.
