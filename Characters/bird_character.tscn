@@ -21,8 +21,6 @@ character = NodePath("..")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_7rv8b")
 animation = &"death"
-frame = 6
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 0)
@@ -34,4 +32,5 @@ shape = SubResource("CircleShape2D_ljif3")
 position = Vector2(8, 0)
 shape = SubResource("CircleShape2D_edmkd")
 
+[connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

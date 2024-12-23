@@ -11,11 +11,16 @@ func add_game_over_scene() -> void:
 #NOTE: call_deferred is to remove everthing after 
 # the next physics process
 func _on_bird_character_hit() -> void:
+	$ObstacleSpawnTimer.stop()
+	for c in $Obstacles.get_children().filter(func(c): return c is BrahObstacle):
+		(c as BrahObstacle).freeze()
+
+func _on_obstacle_spawn_timer_timeout():
+	var bo = BrahObstacle.new($Camera2D)
+	$Obstacles.add_child(bo)
+
+func _on_bird_character_death_animation_finished():
 	var node_children = get_children()
 	for node in node_children:
 		node.call_deferred("queue_free")
 	add_game_over_scene()
-
-func _on_obstacle_spawn_timer_timeout():
-	var bo = BrahObstacle.new($Camera2D)
-	self.add_child(bo)

@@ -5,6 +5,11 @@ extends Node
 @export var shape: CollisionShape2D
 
 var speed : float = -300.0
+var frozen: bool = false
+
+func freeze():
+	frozen = true
 
 func _physics_process(delta: float) -> void:
-	body.position.x += speed * delta
+	if !frozen:
+		body.position.x += speed * delta

@@ -3,11 +3,17 @@ extends Node
 
 var top: StaticBody2D
 var bottom: StaticBody2D
+var top_movement_component: CompObstacleMove
+var bottom_movement_component: CompObstacleMove
 
 const pad = 175
 const gap = 520
 const top_texture = preload("res://Art/Backgrounds/Obstacle1.png")
 const bottom_texture = preload("res://Art/Backgrounds/Obstacle2.png")
+
+func freeze():
+	top_movement_component.freeze()
+	bottom_movement_component.freeze()
 
 func _init(camera: Camera2D):
 	top = StaticBody2D.new()
@@ -23,10 +29,10 @@ func _init(camera: Camera2D):
 	var top_sprite = Sprite2D.new()
 	top_sprite.texture = top_texture
 	top.add_child(top_sprite)
-	var top_movement_comp = CompObstacleMove.new()
-	top_movement_comp.body = top
-	top_movement_comp.shape = top_shape
-	top.add_child(top_movement_comp)
+	top_movement_component = CompObstacleMove.new()
+	top_movement_component.body = top
+	top_movement_component.shape = top_shape
+	top.add_child(top_movement_component)
 	
 	var bottom_shape = CollisionShape2D.new()
 	bottom_shape.shape = RectangleShape2D.new()
@@ -36,10 +42,10 @@ func _init(camera: Camera2D):
 	var bottom_sprite = Sprite2D.new()
 	bottom_sprite.texture = bottom_texture
 	bottom.add_child(bottom_sprite)
-	var bottom_movement_comp = CompObstacleMove.new()
-	bottom_movement_comp.body = bottom
-	bottom_movement_comp.shape = bottom_shape
-	bottom.add_child(bottom_movement_comp)
+	bottom_movement_component = CompObstacleMove.new()
+	bottom_movement_component.body = bottom
+	bottom_movement_component.shape = bottom_shape
+	bottom.add_child(bottom_movement_component)
 	
 	var far_x = camera.get_viewport_rect().size[0]
 	top.position.x = far_x
