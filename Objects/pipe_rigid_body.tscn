@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq4mxc6lu6w5l"]
+
+[ext_resource type="Texture2D" uid="uid://shoivftoa644" path="res://Art/Backgrounds/Obstacle1.png" id="1_rrpn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xhsh"]
+size = Vector2(88, 336)
+
+[node name="PipeRigidBody" type="RigidBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rrpn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(52, 168)
+shape = SubResource("RectangleShape2D_5xhsh")
