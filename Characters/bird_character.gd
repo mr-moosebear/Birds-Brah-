@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const JUMP_VELOCITY = -400.0
-const ROTATION_DEG_MAX = 40
+const ROTATION_DEG_MAX = 20
 var alive: bool
 signal hit
 signal death_animation_finished

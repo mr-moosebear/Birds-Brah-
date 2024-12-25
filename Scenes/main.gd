@@ -8,8 +8,6 @@ func add_game_over_scene() -> void:
 	var scene = scene_path.instantiate()
 	add_child(scene)
 
-#NOTE: call_deferred is to remove everthing after 
-# the next physics process
 func _on_bird_character_hit() -> void:
 	$ObstacleSpawnTimer.stop()
 	for c in $Obstacles.get_children().filter(func(c): return c is BrahObstacle):
