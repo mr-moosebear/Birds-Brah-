@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+# Start of the new branch
 const JUMP_VELOCITY = -400.0
 const ROTATION_DEG_MAX = 20
 var alive: bool
