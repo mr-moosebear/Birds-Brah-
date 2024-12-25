@@ -1,6 +1,7 @@
 extends CharacterBody2D
 # Start of the new branch
 const JUMP_VELOCITY = -400.0
+const SPEED : float = 300
 const ROTATION_DEG_MAX = 20
 var alive: bool
 signal hit
@@ -20,6 +21,9 @@ func get_input() -> void:
 	if Input.is_action_just_pressed("flap"):
 		velocity.y = JUMP_VELOCITY
 		Global.score += 100
+	if Input.is_action_just_pressed("forward"):
+		velocity.x = SPEED
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is StaticBody2D && (body as StaticBody2D).is_in_group("obstacles"):
