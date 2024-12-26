@@ -1,9 +1,43 @@
 extends Node2D
 
+
+@onready var top_pipe = $TopPipe
+@onready var bottom_pipe = $BottomPipe
+var screen_size
+var min_y : int
+var max_y : int
+
+func _ready() -> void:
+	position = get_random_spawn_position()
+	place_bottom_pipe()
+	print_shit()
+
 func _process(delta: float) -> void:
 	self.position.x += -5
 
+func set_gap() -> void:
+	Global.gap = int(float(screen_size.y) * 0.15)
+
+func get_random_spawn_position() -> Vector2:
+	screen_size = get_tree().root.get_viewport().size
+	set_gap()
+	var x_pos = get_tree().root.get_viewport().size.x + 500
+	get_min_max_y()
+	return Vector2(x_pos, randi_range(min_y, max_y))
+
+func get_min_max_y() -> void:
+	min_y = int(float(get_tree().root.get_viewport().size.y * 0.15)) 
+	max_y = Global.gap + min_y
+	
+
+func place_bottom_pipe() -> void:
+	bottom_pipe.position.y = position.y + Global.gap
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	print("Goodbye")
 	queue_free()
+
+func print_shit() -> void:
+	print("Position is: ", position)
+	print("Bottom Position:", bottom_pipe.position)
+	print("Gap is: ", Global.gap)
+	print("Min y: ", min_y, " Max y: ", max_y)

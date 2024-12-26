@@ -40,7 +40,7 @@ func _init(camera: Camera2D):
 	bottom_sprite.texture = bottom_texture
 	bottom.add_child(bottom_sprite)
 	bottom_movement_component = CompObstacleMove.new()
-	bottom_movement_component.body = bottom
+	#bottom_movement_component.body = bottom
 	bottom_movement_component.shape = bottom_shape
 	bottom.add_child(bottom_movement_component)
 	

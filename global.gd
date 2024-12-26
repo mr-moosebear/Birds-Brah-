@@ -2,6 +2,15 @@ extends Node
 
 var bird : String = "huebird"
 var score : int = 0
+var gap : int
+
+
+var game_values : Dictionary = {
+	"player_bird": null,
+	"gap": null,
+	"score": null
+}
+
 
 func convert_score_to_string(i: int) -> String:
 	return str(i) 
