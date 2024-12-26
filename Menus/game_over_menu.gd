@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _ready() -> void:
 	Global.save_game_score()
 	var string = Global.load_score()

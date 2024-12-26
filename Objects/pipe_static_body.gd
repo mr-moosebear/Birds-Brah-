@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	self.position.x += -5
 
 func set_gap() -> void:
-	Global.gap = int(float(screen_size.y) * 0.15)
+	Global.gap = int(float(screen_size.y) * 0.25)
 
 func get_random_spawn_position() -> Vector2:
 	screen_size = get_tree().root.get_viewport().size
@@ -31,13 +31,12 @@ func get_min_max_y() -> void:
 	
 
 func place_bottom_pipe() -> void:
-	bottom_pipe.position.y = position.y + Global.gap
+	bottom_pipe.position.y = top_pipe.position.y + Global.gap
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
 
 func print_shit() -> void:
 	print("Position is: ", position)
-	print("Bottom Position:", bottom_pipe.position)
 	print("Gap is: ", Global.gap)
 	print("Min y: ", min_y, " Max y: ", max_y)
