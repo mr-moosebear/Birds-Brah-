@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bov2g28t1vde0"]
+[gd_scene load_steps=6 format=3 uid="uid://bov2g28t1vde0"]
 
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="1_1ly1i"]
 [ext_resource type="Script" path="res://Menus/leader_board_menu.gd" id="1_c7y8j"]
 [ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="1_osdki"]
+[ext_resource type="Script" path="res://Components/LoadLeaderboardComponent.gd" id="4_0pj7s"]
+[ext_resource type="Script" path="res://Components/SaveHighScores.gd" id="5_qxgjr"]
 
 [node name="LeaderBoardMenu" type="Control"]
 layout_mode = 3
@@ -44,3 +46,303 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_1ly1i")
 theme_override_font_sizes/font_size = 64
 text = "High Score"
+
+[node name="NumberPlaceLabels" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 112.0
+offset_right = 320.0
+offset_bottom = 664.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "1."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "2."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "3."
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "4."
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "5."
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "6."
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "7."
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "8."
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "9."
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="NumberPlaceLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "10."
+horizontal_alignment = 1
+
+[node name="NameLabels" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 112.0
+offset_right = 688.0
+offset_bottom = 664.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="NameLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="ScoreLabels" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 112.0
+offset_right = 1048.0
+offset_bottom = 664.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="ScoreLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ly1i")
+theme_override_font_sizes/font_size = 42
+text = "Hello"
+horizontal_alignment = 1
+
+[node name="CompLoadGameScores" type="Node" parent="."]
+script = ExtResource("4_0pj7s")
+
+[node name="CompSaveScores" type="Node" parent="."]
+script = ExtResource("5_qxgjr")

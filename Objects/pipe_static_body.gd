@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var top_pipe = $TopPipe
 @onready var bottom_pipe = $BottomPipe
 var screen_size
@@ -12,7 +11,7 @@ func _ready() -> void:
 	place_bottom_pipe()
 	print_shit()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	self.position.x += -5
 
 func set_gap() -> void:
