@@ -18,6 +18,8 @@ func _physics_process(_delta: float) -> void:
 
 func get_input() -> void:
 	if Input.is_action_just_pressed("flap"):
+		$AnimatedSprite2D.set_frame(17)
+		[$Fwoosh1Player, $Fwoosh2Player][randi() % 2].play()
 		velocity.y = JUMP_VELOCITY
 		Global.score += 100
 
