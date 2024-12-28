@@ -2,9 +2,12 @@ extends Node2D
 
 
 func _ready() -> void:
-	Global.save_game_score()
-	var string = Global.load_score()
+	var string = str(Global.score)
 	$ScoreLabel.text = string
+	if Global.save_state.high_score < Global.score:
+		Global.save_state.high_score = Global.score
+		Global.save_game_state()
+		print("Saved new high score")
 	Global.score = 0
 
 func _on_bird_select_button_pressed() -> void:

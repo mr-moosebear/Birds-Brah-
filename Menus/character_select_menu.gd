@@ -45,5 +45,6 @@ func _on_left_button_pressed() -> void:
 
 
 func _on_select_button_pressed() -> void:
-	Global.bird = BIRDS[bird_index]
+	Global.save_state.bird = BIRDS[bird_index]
+	Global.save_game_state()
 	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")

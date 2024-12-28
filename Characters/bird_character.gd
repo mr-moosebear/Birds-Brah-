@@ -8,7 +8,7 @@ signal death_animation_finished
 
 func _ready() -> void:
 	alive = true
-	$AnimatedSprite2D.play(Global.bird)
+	$AnimatedSprite2D.play(Global.save_state.bird)
 
 func _physics_process(_delta: float) -> void:
 	if alive:
