@@ -1,10 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://cisi06toscbnv"]
+[gd_scene load_steps=10 format=3 uid="uid://cisi06toscbnv"]
 
 [ext_resource type="Script" path="res://Components/GravityComponent.gd" id="1_4bwvj"]
 [ext_resource type="SpriteFrames" uid="uid://cusxl5pvheuma" path="res://Characters/charcter_animations.tres" id="1_7rv8b"]
 [ext_resource type="Script" path="res://Characters/bird_character.gd" id="1_wq6ey"]
 [ext_resource type="AudioStream" uid="uid://b3ppf6k8axshv" path="res://Art/Sounds/Fwoosh1.ogg" id="4_d0yx1"]
 [ext_resource type="AudioStream" uid="uid://de7kwuckws3rx" path="res://Art/Sounds/Fwoosh2.ogg" id="5_x58ec"]
+[ext_resource type="Texture2D" uid="uid://csvpcxal31w6m" path="res://Art/DeathImages/1.png" id="6_l7yxr"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ms1d6"]
+particle_flag_rotate_y = true
+direction = Vector3(0, 0.655, 0)
+spread = 30.0
+initial_velocity_min = 79.34
+initial_velocity_max = 149.64
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljif3"]
 radius = 24.0
@@ -19,6 +30,18 @@ script = ExtResource("1_wq6ey")
 [node name="CompGravity" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("1_4bwvj")
 character = NodePath("..")
+
+[node name="FwooshParticles" type="GPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_ms1d6")
+texture = ExtResource("6_l7yxr")
+lifetime = 3.85
+one_shot = true
+speed_scale = 2.35
+explosiveness = 1.0
+randomness = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_7rv8b")
