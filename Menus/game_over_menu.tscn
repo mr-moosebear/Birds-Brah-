@@ -53,14 +53,34 @@ theme_override_font_sizes/font_size = 100
 text = "GAME OVER"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 432.0
+offset_left = 430.0
 offset_top = 184.0
-offset_right = 736.0
+offset_right = 734.0
 offset_bottom = 264.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_rw6xk")
 theme_override_font_sizes/font_size = 64
 text = "Score"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 253.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rw6xk")
+theme_override_font_sizes/font_size = 33
+text = "High Score"
+
+[node name="HighScoreNumberLabel" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 43.0
+offset_right = 256.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_rw6xk")
+theme_override_font_sizes/font_size = 23
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_left = 232.0
