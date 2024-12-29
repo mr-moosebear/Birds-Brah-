@@ -8,6 +8,12 @@ func add_game_over_scene() -> void:
 	var scene = scene_path.instantiate()
 	add_child(scene)
 
+func _physics_process(delta):
+	if collider != null:
+		var char_height = collider.shape.radius * 2
+		character.position.y = clamp(character.position.y, -char_height, get_viewport_rect().end.y + char_height)
+		print(character.position.y)
+
 #NOTE: call_deferred is to remove everthing after 
 # the next physics process
 func _on_bird_character_hit() -> void:
