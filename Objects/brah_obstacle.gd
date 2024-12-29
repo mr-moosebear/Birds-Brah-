@@ -1,8 +1,8 @@
 class_name BrahObstacle
 extends Node
 
-var top: StaticBody2D
-var bottom: StaticBody2D
+var top: RigidBody2D
+var bottom: RigidBody2D
 var top_movement_component: CompObstacleMove
 var bottom_movement_component: CompObstacleMove
 
@@ -11,28 +11,25 @@ const gap = 520
 const top_texture = preload("res://Art/Backgrounds/Obstacle1.png")
 const bottom_texture = preload("res://Art/Backgrounds/Obstacle2.png")
 
-func freeze():
-	top_movement_component.freeze()
-	bottom_movement_component.freeze()
 
 func _init(camera: Camera2D):
-	top = StaticBody2D.new()
-	top.add_to_group("obstacles", true)
-	bottom = StaticBody2D.new()
-	bottom.add_to_group("obstacles", true)
+	#top = RigidBody2D.new()
+	#top.add_to_group("obstacles", true)
+	#bottom = RigidBody2D.new()
+	#bottom.add_to_group("obstacles", true)
 	
-	var top_shape = CollisionShape2D.new()
-	top_shape.shape = RectangleShape2D.new()
-	top_shape.shape.set_size(Vector2(86, 342))
-	top.add_child(top_shape)
+	#var top_shape = CollisionShape2D.new()
+	#top_shape.shape = RectangleShape2D.new()
+	#top_shape.shape.set_size(Vector2(86, 342))
+	#top.add_child(top_shape)
 	
-	var top_sprite = Sprite2D.new()
-	top_sprite.texture = top_texture
-	top.add_child(top_sprite)
-	top_movement_component = CompObstacleMove.new()
-	top_movement_component.body = top
-	top_movement_component.shape = top_shape
-	top.add_child(top_movement_component)
+	#var top_sprite = Sprite2D.new()
+	#top_sprite.texture = top_texture
+	#top.add_child(top_sprite)
+	#top_movement_component = CompObstacleMove.new()
+	#top_movement_component.body = top
+	#top_movement_component.shape = top_shape
+	#top.add_child(top_movement_component)
 	
 	var bottom_shape = CollisionShape2D.new()
 	bottom_shape.shape = RectangleShape2D.new()
@@ -43,7 +40,7 @@ func _init(camera: Camera2D):
 	bottom_sprite.texture = bottom_texture
 	bottom.add_child(bottom_sprite)
 	bottom_movement_component = CompObstacleMove.new()
-	bottom_movement_component.body = bottom
+	#bottom_movement_component.body = bottom
 	bottom_movement_component.shape = bottom_shape
 	bottom.add_child(bottom_movement_component)
 	

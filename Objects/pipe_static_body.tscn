@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3mf3s4myhxhf"]
+
+[ext_resource type="Texture2D" uid="uid://shoivftoa644" path="res://Art/Backgrounds/Obstacle1.png" id="1_hi0w7"]
+[ext_resource type="Script" path="res://Objects/pipe_static_body.gd" id="1_mhihk"]
+[ext_resource type="Texture2D" uid="uid://bxqrv167k8q5m" path="res://Art/Backgrounds/Obstacle2.png" id="2_56ma4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sdd1"]
+size = Vector2(84, 546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qemui"]
+size = Vector2(84, 544)
+
+[node name="PipeStaticBody" type="Node2D" groups=["object"]]
+script = ExtResource("1_mhihk")
+
+[node name="TopPipe" type="StaticBody2D" parent="." groups=["object"]]
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="TopPipe"]
+offset_left = -48.0
+offset_top = -560.0
+offset_right = 57.0
+offset_bottom = 2.0
+texture = ExtResource("1_hi0w7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
+position = Vector2(6, -280)
+shape = SubResource("RectangleShape2D_3sdd1")
+
+[node name="BottomPipe" type="StaticBody2D" parent="." groups=["object"]]
+position = Vector2(0, 162)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BottomPipe"]
+offset_left = -56.0
+offset_right = 49.0
+offset_bottom = 552.0
+texture = ExtResource("2_56ma4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
+position = Vector2(-2, 280)
+shape = SubResource("RectangleShape2D_qemui")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(120, 378)
+scale = Vector2(1, 6.2)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
