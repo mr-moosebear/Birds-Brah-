@@ -9,7 +9,6 @@ var max_y : int
 func _ready() -> void:
 	position = get_random_spawn_position()
 	place_bottom_pipe()
-	print_shit()
 
 func _process(_delta: float) -> void:
 	self.position.x += -5
@@ -34,8 +33,3 @@ func place_bottom_pipe() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
-
-func print_shit() -> void:
-	print("Position is: ", position)
-	print("Gap is: ", Global.gap)
-	print("Min y: ", min_y, " Max y: ", max_y)

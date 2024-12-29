@@ -1,10 +1,9 @@
 extends Control
-# NOTE: Its Ugly
+
 var leaderboard : Dictionary
 
-
 func _ready() -> void:
-	leaderboard = $CompLoadGameScores.load_leaderboard()
+	leaderboard = Global.load_leaderboard()
 	set_leaderboard_names(leaderboard)
 	set_leaderboard_scores(leaderboard)
 
@@ -32,3 +31,11 @@ func set_leaderboard_names(dict: Dictionary) -> void:
 	$NameLabels/Label8.text = dict["8"]["name"]
 	$NameLabels/Label9.text = dict["9"]["name"]
 	$NameLabels/Label10.text = dict["10"]["name"]
+
+
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
+
+
+func _on_new_game_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
