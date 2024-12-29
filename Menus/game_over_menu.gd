@@ -6,14 +6,14 @@ var new_high_score : bool = false
 var place : int
 
 func _ready() -> void:
-    # Needs to be merged better
-    #var string = str(Global.score)
-    #$ScoreLabel.text = string
-    #if Global.save_state.high_score < Global.score:
-    #	Global.save_state.high_score = Global.score
-    #	Global.save_game_state()
-    #	print("Saved new high score")
-    #$HighScoreNumberLabel.text = str(Global.save_state.high_score)
+	# Needs to be merged better
+	#var string = str(Global.score)
+	#$ScoreLabel.text = string
+	#if Global.save_state.high_score < Global.score:
+	#	Global.save_state.high_score = Global.score
+	#	Global.save_game_state()
+	#	print("Saved new high score")
+	#$HighScoreNumberLabel.text = str(Global.save_state.high_score)
 	
 	$ScoreLabel.text = str(Global.score)
 	player_score = int(Global.score)

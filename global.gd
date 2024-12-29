@@ -1,7 +1,12 @@
 extends Node
 
 var save_state: SaveState
-var score = 0
+#var score = 0
+var bird : String = "huebird"
+var score : int = 0
+var gap : int
+var high_score : int
+var placement : int
 
 func _ready():
 	# load the saved game state on game instantiation
@@ -39,11 +44,7 @@ func load_game_state():
 		print("JSON parse error: ", json.get_error_message(), " in ", string, " at line ", json.get_error_line())
 		return null
 
-var bird : String = "huebird"
-var score : int = 0
-var gap : int
-var high_score : int
-var placement : int
+
 
 #var default_leaderboard : Dictionary = {
 #	"1": {"name": "moose", "score": "10000"},
@@ -80,4 +81,3 @@ func load_leaderboard():
 			return
 	else:
 		return
-

@@ -7,7 +7,7 @@ const ROTATION_DEG_MAX = 20
 signal hit
 
 func _ready() -> void:
-	alive = true
+	#alive = true
 	$AnimatedSprite2D.play(Global.save_state.bird)
 	$AnimatedSprite2D.play(Global.bird)
 
