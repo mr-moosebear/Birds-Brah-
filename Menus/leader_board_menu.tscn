@@ -15,23 +15,10 @@ script = ExtResource("1_c7y8j")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_osdki")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 400.0
-offset_right = 800.0
+offset_right = 1185.0
 offset_bottom = 715.0
 texture = ExtResource("1_osdki")
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 784.0
-offset_right = 1184.0
-offset_bottom = 715.0
-texture = ExtResource("1_osdki")
+stretch_mode = 1
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
