@@ -18,6 +18,7 @@ layout_mode = 0
 offset_right = 1160.0
 offset_bottom = 664.0
 texture = ExtResource("1_m4yp0")
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
