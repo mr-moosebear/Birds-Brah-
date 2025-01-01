@@ -7,7 +7,6 @@ func add_game_over_scene() -> void:
 	var scene = scene_path.instantiate()
 	add_child(scene)
 
-
 #func _physics_process(delta):
 #	if collider != null:
 #		var char_height = collider.shape.radius * 2

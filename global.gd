@@ -1,6 +1,12 @@
 extends Node
 
+var local_leaderboard: LocalLeaderboard
 var save_state: SaveState
+
+var local_leaderboard_view_idx: int = 0 # the placement the leaderboard view should center around
+
+const LOCAL_LEADERBOARD_PATH: String = "user://leaderboard_local.json"
+
 #var score = 0
 var bird : String = "huebird"
 var score : int = 0
@@ -15,6 +21,8 @@ func _ready():
 		save_state = SaveState.new()
 	else:
 		save_state = loaded_save_state
+	# load the local leaderboard
+	local_leaderboard = LocalLeaderboard.load_from_path(LOCAL_LEADERBOARD_PATH)
 
 func save_game_state():
 	var save_file = FileAccess.open("user://savegame.dat", FileAccess.WRITE)
@@ -44,40 +52,8 @@ func load_game_state():
 		print("JSON parse error: ", json.get_error_message(), " in ", string, " at line ", json.get_error_line())
 		return null
 
-
-
-#var default_leaderboard : Dictionary = {
-#	"1": {"name": "moose", "score": "10000"},
-#	"2": {"name": "bear", "score": "9000"},
-#	"3": {"name": "bird master", "score": "8000"},
-#	"4": {"name": "dude", "score": "7000"},
-#	"5": {"name": "me", "score": "6000"},
-#	"6": {"name": "hue", "score": "5000"},
-#	"7": {"name": "bo", "score": "4000"},
-#	"8": {"name": "juice", "score": "3000"},
-#	"9": {"name": "main_man", "score": "2000"},
-#	"10": {"name": "done", "score": "1000"}
-#}
-
-
-func save_leaderboard(dict: Dictionary) -> void:
-	var file = FileAccess.open("res://PlayerData/LeaderOne.json", FileAccess.WRITE)
-	#var file = FileAccess.open("user:PlayerBoard.json", FileAccess.WRITE)
-	var json = JSON.stringify(dict)
-	file.store_line(json)
-	file.close()
+func save_leaderboard():
+	self.local_leaderboard.save_to_path(LOCAL_LEADERBOARD_PATH)
 
 func load_leaderboard():
-	var file = FileAccess.open("res://PlayerData/LeaderOne.json", FileAccess.READ)
-	#var file = FileAccess.open("res://PlayerBoard.json", FileAccess.READ)
-	var string = file.get_as_text()
-	var json = JSON.new()
-	var err = json.parse(string)
-	if err == OK:
-		var data_retrieved = json.data
-		if typeof(data_retrieved) == TYPE_DICTIONARY:
-			return data_retrieved
-		else:
-			return
-	else:
-		return
+	self.local_leaderboard = LocalLeaderboard.load_from_path(LOCAL_LEADERBOARD_PATH)
