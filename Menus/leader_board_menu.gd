@@ -1,5 +1,13 @@
 extends Control
 
+func format_int_with_commas(i: int) -> String:
+	var buffer = str(i).reverse()
+	var output_segments = []
+	for idx in range(0, buffer.length(), 3):
+		var chunk = buffer.substr(idx, 3)
+		output_segments.append(chunk)
+	return ",".join(output_segments).reverse()
+
 func _ready() -> void:
 	var labels = [
 		{"placement": $NumberPlaceLabels/Label, "name": $NameLabels/Label, "score": $ScoreLabels/Label},
@@ -27,9 +35,9 @@ func _ready() -> void:
 		var score_item = Global.local_leaderboard.get_score_at_index(placement)
 		var score_name = score_item[Global.local_leaderboard.PLACEMENT_NAME]
 		var score_int = score_item[Global.local_leaderboard.PLACEMENT_SCORE]
-		labels[placement_label_idx]["placement"].text = str(placement + 1)
+		labels[placement_label_idx]["placement"].text = format_int_with_commas(placement + 1) + "."
 		labels[placement_label_idx]["name"].text = score_name
-		labels[placement_label_idx]["score"].text = str(score_int)
+		labels[placement_label_idx]["score"].text = format_int_with_commas(score_int)
 		
 
 func _on_main_menu_button_pressed() -> void:
