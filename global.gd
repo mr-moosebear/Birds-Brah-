@@ -1,5 +1,7 @@
 extends Node
 
+signal score_signal
+
 var local_leaderboard: LocalLeaderboard
 var save_state: SaveState
 
@@ -23,6 +25,11 @@ func _ready():
 		save_state = loaded_save_state
 	# load the local leaderboard
 	local_leaderboard = LocalLeaderboard.load_from_path(LOCAL_LEADERBOARD_PATH)
+	
+	self.score_signal.connect(_on_score)
+
+func _on_score(score: int):
+	Global.score += score
 
 func save_game_state():
 	var save_file = FileAccess.open("user://savegame.dat", FileAccess.WRITE)

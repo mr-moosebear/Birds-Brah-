@@ -9,6 +9,7 @@
 script = ExtResource("1_sfhd0")
 
 [node name="LevelOne" parent="." instance=ExtResource("1_6bng1")]
+script = null
 
 [node name="BirdCharacter" parent="." instance=ExtResource("3_nv52w")]
 position = Vector2(147, 82)

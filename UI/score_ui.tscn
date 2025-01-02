@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xn7mpwope1db"]
+[gd_scene load_steps=4 format=3 uid="uid://xn7mpwope1db"]
 
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="1_ekems"]
 [ext_resource type="Script" path="res://UI/score_ui.gd" id="1_n4skl"]
+[ext_resource type="Texture2D" uid="uid://deeie1cehbnp" path="res://Art/UserInterfaces/ScoreBackground.png" id="2_3d2i6"]
 
 [node name="ScoreUI" type="Control"]
 layout_mode = 3
@@ -12,17 +13,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n4skl")
 
+[node name="ScoreBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 586)
+texture = ExtResource("2_3d2i6")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 528.0
+offset_left = 496.0
 offset_top = 560.0
-offset_right = 688.0
+offset_right = 656.0
 offset_bottom = 615.0
+pivot_offset = Vector2(80, 27)
 theme_override_colors/font_color = Color(0.709804, 0, 0.784314, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ekems")
 theme_override_font_sizes/font_size = 48
 text = "0"
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

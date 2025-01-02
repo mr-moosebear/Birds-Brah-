@@ -20,7 +20,6 @@ func spawn_pipe_object() -> void:
 	var scene = scene_path.instantiate()
 	add_child(scene)
 
-
 func _on_bird_character_hit() -> void:
 	var node_children = get_children()
 	for node in node_children:

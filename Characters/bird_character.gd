@@ -24,7 +24,7 @@ func get_input() -> void:
 		add_child(new_particles)
 		[$Fwoosh1Player, $Fwoosh2Player][randi() % 2].play()
 		velocity.y = JUMP_VELOCITY
-		Global.score += 100
+		Global.score_signal.emit(100)
 	if Input.is_action_just_pressed("forward"):
 		velocity.x = SPEED
 
