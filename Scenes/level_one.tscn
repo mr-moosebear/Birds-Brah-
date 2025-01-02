@@ -18,6 +18,8 @@ scroll_px_sec = 100.0
 
 [node name="BackgroundRect" type="TextureRect" parent="Scroller"]
 z_index = -2
+anchors_preset = -1
+anchor_right = -1.65278
 offset_right = 2304.0
 offset_bottom = 715.0
 texture = ExtResource("1_py34o")
