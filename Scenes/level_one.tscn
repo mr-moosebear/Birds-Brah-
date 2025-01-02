@@ -1,11 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmo7nycj4xajd"]
 
 [ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="1_py34o"]
-[ext_resource type="Script" path="res://Scenes/level_one.gd" id="1_tvp1n"]
 [ext_resource type="AudioStream" uid="uid://bwai2xkej0djw" path="res://Art/Sounds/ActandContemplate.ogg" id="3_ht3ae"]
 
+[sub_resource type="GDScript" id="GDScript_full6"]
+script/source = "extends Node2D
+"
+
 [node name="LevelOne" type="Node2D"]
-script = ExtResource("1_tvp1n")
+script = SubResource("GDScript_full6")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(1000, 0)
