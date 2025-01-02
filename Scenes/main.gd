@@ -18,13 +18,19 @@ func _physics_process(delta):
 func spawn_pipe_object() -> void:
 	var scene_path = preload("res://Objects/pipe_static_body.tscn")
 	var scene = scene_path.instantiate()
-	add_child(scene)
+	$Obstacles.add_child(scene)
 
-func _on_bird_character_hit() -> void:
+func _on_bird_character_death_animation_finished():
 	var node_children = get_children()
 	for node in node_children:
 		node.call_deferred("queue_free")
 	add_game_over_scene()
 
+func _on_bird_character_hit() -> void:
+	$LevelOne/Scroller.active = false
+	for node in $Obstacles.get_children():
+		node.do_move = false
+
 func _on_obstacle_spawn_timer_timeout():
-	spawn_pipe_object()
+	if character.alive:
+		spawn_pipe_object()

@@ -5,13 +5,16 @@ extends Node2D
 var screen_size
 var min_y : int
 var max_y : int
+var do_move: bool
 
 func _ready() -> void:
+	do_move = true
 	position = get_random_spawn_position()
 	place_bottom_pipe()
 
 func _process(_delta: float) -> void:
-	self.position.x += -5
+	if do_move:
+		self.position.x += -5
 
 func set_gap() -> void:
 	Global.gap = int(float(screen_size.y) * 0.25)
