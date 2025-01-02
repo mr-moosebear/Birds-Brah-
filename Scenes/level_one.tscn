@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmo7nycj4xajd"]
 
-[ext_resource type="Script" path="res://Scenes/scroller.gd" id="1_2uwps"]
+[ext_resource type="Script" path="res://Objects/scroller.gd" id="1_2uwps"]
 [ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="1_py34o"]
 [ext_resource type="AudioStream" uid="uid://bwai2xkej0djw" path="res://Art/Sounds/ActandContemplate.ogg" id="3_ht3ae"]
 
