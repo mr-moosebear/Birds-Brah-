@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcaqpykdiiyou"
-path="res://.godot/imported/Wing_B.png-aea643ba91e7841957824485e75fd13a.ctex"
+uid="uid://dxtusbf7q4rhl"
+path="res://.godot/imported/Hair.png-0f911aa1c4a87821c896beab9a37f4ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BirdSpine/Wing_B.png"
-dest_files=["res://.godot/imported/Wing_B.png-aea643ba91e7841957824485e75fd13a.ctex"]
+source_file="res://Art/BirdSpine/BirdSeven/Hair.png"
+dest_files=["res://.godot/imported/Hair.png-0f911aa1c4a87821c896beab9a37f4ea.ctex"]
 
 [params]
 

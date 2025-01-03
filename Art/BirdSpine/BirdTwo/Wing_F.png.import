@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dws0oqf02qnyl"
-path="res://.godot/imported/Mouth_B.png-25dc55963e780754da175f229e9377f4.ctex"
+uid="uid://bhfmmol5cbp7r"
+path="res://.godot/imported/Wing_F.png-846224ac4b9966fe46a6f564a1451ff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BirdSpine/Mouth_B.png"
-dest_files=["res://.godot/imported/Mouth_B.png-25dc55963e780754da175f229e9377f4.ctex"]
+source_file="res://Art/BirdSpine/BirdTwo/Wing_F.png"
+dest_files=["res://.godot/imported/Wing_F.png-846224ac4b9966fe46a6f564a1451ff4.ctex"]
 
 [params]
 
