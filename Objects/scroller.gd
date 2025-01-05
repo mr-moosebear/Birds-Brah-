@@ -4,6 +4,7 @@ extends Node
 @export var scroll_px_sec: float
 
 var rect_width: int
+var rect_y: int
 var active: bool
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,7 @@ func _ready():
 	scroll_rect.stretch_mode = TextureRect.STRETCH_TILE
 	scroll_rect.set_size(Vector2(scaled_rect_width, default_rect_height))
 	self.rect_width = scaled_rect_width
+	self.rect_y = scroll_rect.get_position().y
 	self.active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,4 +26,4 @@ func _process(delta):
 	if self.active:
 		var tick_ms = Time.get_ticks_msec()
 		var offset = int(scroll_px_sec * (tick_ms / 1000.0)) % (self.rect_width / 2)
-		scroll_rect.set_position(Vector2(-offset, 0))
+		scroll_rect.set_position(Vector2(-offset, self.rect_y))

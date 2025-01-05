@@ -31,7 +31,7 @@ func _on_level_2_button_pressed():
 	load_level(preload("res://Scenes/level_two.tscn"))
 
 func _on_level_3_button_pressed():
-	print("3")
+	load_level(preload("res://Scenes/level_three.tscn"))
 
 func _on_level_4_button_pressed():
-	print("4")
+	load_level(preload("res://Scenes/level_four.tscn"))
