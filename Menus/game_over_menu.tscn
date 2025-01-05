@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbg5sas8daj51"]
+[gd_scene load_steps=10 format=3 uid="uid://dbg5sas8daj51"]
 
 [ext_resource type="Script" path="res://Menus/game_over_menu.gd" id="1_71oxy"]
 [ext_resource type="Texture2D" uid="uid://bjfxaniaog4li" path="res://Art/Backgrounds/5.png" id="1_xtril"]
@@ -6,6 +6,11 @@
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="2_rw6xk"]
 [ext_resource type="Texture2D" uid="uid://b83kn52sxck67" path="res://Art/UserInterfaces/Continue.png" id="3_30qsl"]
 [ext_resource type="AudioStream" uid="uid://cjceu0a2gya3" path="res://Art/Sounds/Ethnic Beat.ogg" id="6_qra8b"]
+[ext_resource type="Texture2D" uid="uid://buu85v4q3vyv4" path="res://Art/UserInterfaces/BgLeaderboardName.png" id="6_t5lel"]
+[ext_resource type="Texture2D" uid="uid://bx5ur7iixiq3j" path="res://Art/UserInterfaces/RightArrow.png" id="7_s88vg"]
+
+[sub_resource type="Theme" id="Theme_c0mff"]
+default_font = ExtResource("2_rw6xk")
 
 [node name="GameOverMenu" type="Node2D"]
 script = ExtResource("1_71oxy")
@@ -94,6 +99,62 @@ theme_override_font_sizes/font_size = 64
 text = "1000"
 horizontal_alignment = 1
 
+[node name="HighScoreMenu" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.911167, 1, 0.59, 0.980392)
+texture_filter = 3
+offset_left = 412.0
+offset_top = 97.0
+offset_right = 740.0
+offset_bottom = 370.0
+texture = ExtResource("6_t5lel")
+
+[node name="NewHighScore" type="Label" parent="HighScoreMenu"]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 328.0
+offset_bottom = 50.0
+theme = SubResource("Theme_c0mff")
+theme_override_colors/font_color = Color(0.32581, 0.150953, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 26
+text = "New High Score!"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="HighScoreMenu"]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 328.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.9, 0.84, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rw6xk")
+theme_override_font_sizes/font_size = 35
+text = "{Score}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScorePlayerNameInput" type="TextEdit" parent="HighScoreMenu"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 124.0
+offset_right = 280.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("2_rw6xk")
+placeholder_text = "Enter your name..."
+deselect_on_focus_loss_enabled = false
+caret_blink = true
+
+[node name="HighScoreSubmitButton" type="Button" parent="HighScoreMenu"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 181.0
+offset_right = 222.0
+offset_bottom = 247.0
+text = "Save"
+icon = ExtResource("7_s88vg")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_qra8b")
 autoplay = true
@@ -101,3 +162,4 @@ parameters/looping = true
 
 [connection signal="pressed" from="BirdSelectButton" to="." method="_on_bird_select_button_pressed"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="HighScoreMenu/HighScoreSubmitButton" to="." method="_on_high_score_submit_button_pressed"]
