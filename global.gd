@@ -64,3 +64,11 @@ func save_leaderboard():
 
 func load_leaderboard():
 	self.local_leaderboard = LocalLeaderboard.load_from_path(LOCAL_LEADERBOARD_PATH)
+
+func format_int_with_commas(i: int) -> String:
+	var buffer = str(i).reverse()
+	var output_segments = []
+	for idx in range(0, buffer.length(), 3):
+		var chunk = buffer.substr(idx, 3)
+		output_segments.append(chunk)
+	return ",".join(output_segments).reverse()
