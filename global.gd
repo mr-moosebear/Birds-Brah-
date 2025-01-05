@@ -6,6 +6,7 @@ var local_leaderboard: LocalLeaderboard
 var save_state: SaveState
 
 var local_leaderboard_view_idx: int = 0 # the placement the leaderboard view should center around
+var selected_level: PackedScene
 
 const LOCAL_LEADERBOARD_PATH: String = "user://leaderboard_local.json"
 

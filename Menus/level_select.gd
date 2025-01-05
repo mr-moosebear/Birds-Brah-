@@ -20,11 +20,15 @@ func _process(delta):
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
 
-func _on_level_1_button_pressed():
+func load_level(level: PackedScene):
+	Global.selected_level = level
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
+func _on_level_1_button_pressed():
+	load_level(preload("res://Scenes/level_one.tscn"))
+
 func _on_level_2_button_pressed():
-	print("2")
+	load_level(preload("res://Scenes/level_two.tscn"))
 
 func _on_level_3_button_pressed():
 	print("3")

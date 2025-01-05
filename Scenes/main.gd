@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var character : CharacterBody2D = $BirdCharacter
 @onready var collider : CollisionShape2D = $BirdCharacter/CollisionShape2D
+@onready var loaded_level = Global.selected_level.instantiate()
+
+func _ready():
+	add_child(loaded_level)
 
 func add_game_over_scene() -> void:
 	var scene_path = preload("res://Menus/game_over_menu.tscn")
@@ -27,7 +31,7 @@ func _on_bird_character_death_animation_finished():
 	add_game_over_scene()
 
 func _on_bird_character_hit() -> void:
-	$LevelOne/Scroller.active = false
+	loaded_level.stop_scroller()
 	for node in $Obstacles.get_children():
 		node.do_move = false
 
