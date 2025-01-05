@@ -69,5 +69,7 @@ text = "Start"
 stream = ExtResource("6_6u5w0")
 parameters/looping = true
 
+[node name="Node" type="Node" parent="."]
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BirdSelectButton" to="." method="_on_bird_select_button_pressed"]

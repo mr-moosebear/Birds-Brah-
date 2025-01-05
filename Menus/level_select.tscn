@@ -1,0 +1,215 @@
+[gd_scene load_steps=15 format=3 uid="uid://c7jvttk2odjmu"]
+
+[ext_resource type="Texture2D" uid="uid://bwq6bnkctvltu" path="res://Art/Backgrounds/1.png" id="1_gg5uk"]
+[ext_resource type="Script" path="res://Menus/level_select.gd" id="1_wftfg"]
+[ext_resource type="Texture2D" uid="uid://d2gjoksl2w8lf" path="res://Art/UserInterfaces/LevelSelectBackground.png" id="2_oft5f"]
+[ext_resource type="Texture2D" uid="uid://cldfnt100ajvc" path="res://Art/UserInterfaces/LeftArrow.png" id="2_wil67"]
+[ext_resource type="Texture2D" uid="uid://dpwfecfo0ibun" path="res://Art/UserInterfaces/LevelSelectPreview1.png" id="3_3avdp"]
+[ext_resource type="Texture2D" uid="uid://qrl7gpc4jor4" path="res://Art/UserInterfaces/LevelSelectButton.png" id="4_5kene"]
+[ext_resource type="Texture2D" uid="uid://depyaeag61fi" path="res://Art/UserInterfaces/LevelSelectPreview2.png" id="5_aviap"]
+[ext_resource type="Texture2D" uid="uid://c6sm1ngfl6y7x" path="res://Art/UserInterfaces/LevelSelectPreviewLockedMask.png" id="6_okkre"]
+[ext_resource type="Texture2D" uid="uid://heqtu2m2pro5" path="res://Art/UserInterfaces/LevelSelectPreview3.png" id="7_qxi01"]
+[ext_resource type="Texture2D" uid="uid://dlty2701rfvyj" path="res://Art/UserInterfaces/LevelSelectPreview4.png" id="8_0ovqe"]
+[ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="8_8q45q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnpm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqopp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pf756"]
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_wftfg")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+offset_top = -67.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_gg5uk")
+stretch_mode = 1
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 5
+offset_left = 14.0
+offset_top = 533.0
+offset_right = 80.0
+offset_bottom = 599.0
+scale = Vector2(1.5, 1.5)
+icon = ExtResource("2_wil67")
+flat = true
+
+[node name="LevelBackground1" type="TextureRect" parent="."]
+offset_left = 22.0
+offset_top = 43.0
+offset_right = 265.0
+offset_bottom = 488.0
+texture = ExtResource("2_oft5f")
+stretch_mode = 2
+
+[node name="Preview" type="TextureRect" parent="LevelBackground1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_3avdp")
+
+[node name="Level1Button" type="Button" parent="LevelBackground1"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 365.0
+offset_right = 242.0
+offset_bottom = 446.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tnpm6")
+icon = ExtResource("4_5kene")
+flat = true
+
+[node name="LevelBackground2" type="TextureRect" parent="."]
+offset_left = 310.0
+offset_top = 43.0
+offset_right = 553.0
+offset_bottom = 488.0
+texture = ExtResource("2_oft5f")
+
+[node name="Preview" type="TextureRect" parent="LevelBackground2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_aviap")
+
+[node name="LockedControl" type="Control" parent="LevelBackground2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LockMask" type="TextureRect" parent="LevelBackground2/LockedControl"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_right = 243.0
+offset_bottom = 445.0
+texture = ExtResource("6_okkre")
+
+[node name="UnlockLabel" type="Label" parent="LevelBackground2/LockedControl"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 238.0
+offset_bottom = 356.0
+theme_override_fonts/font = ExtResource("8_8q45q")
+text = "Unlock with a high score of 15,000"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2Button" type="Button" parent="LevelBackground2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 365.0
+offset_right = 242.0
+offset_bottom = 446.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqopp")
+disabled = true
+icon = ExtResource("4_5kene")
+flat = true
+
+[node name="LevelBackground3" type="TextureRect" parent="."]
+offset_left = 598.0
+offset_top = 43.0
+offset_right = 841.0
+offset_bottom = 488.0
+texture = ExtResource("2_oft5f")
+
+[node name="Preview" type="TextureRect" parent="LevelBackground3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_qxi01")
+
+[node name="LockedControl" type="Control" parent="LevelBackground3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LockMask" type="TextureRect" parent="LevelBackground3/LockedControl"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_right = 243.0
+offset_bottom = 445.0
+texture = ExtResource("6_okkre")
+
+[node name="UnlockLabel" type="Label" parent="LevelBackground3/LockedControl"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 238.0
+offset_bottom = 356.0
+theme_override_fonts/font = ExtResource("8_8q45q")
+text = "Unlock with a high score of 30,000"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level3Button" type="Button" parent="LevelBackground3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 365.0
+offset_right = 242.0
+offset_bottom = 446.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pf756")
+disabled = true
+icon = ExtResource("4_5kene")
+flat = true
+
+[node name="LevelBackground4" type="TextureRect" parent="."]
+offset_left = 886.0
+offset_top = 43.0
+offset_right = 1129.0
+offset_bottom = 488.0
+texture = ExtResource("2_oft5f")
+
+[node name="Preview" type="TextureRect" parent="LevelBackground4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_0ovqe")
+
+[node name="LockedControl" type="Control" parent="LevelBackground4"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LockMask" type="TextureRect" parent="LevelBackground4/LockedControl"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_right = 243.0
+offset_bottom = 445.0
+texture = ExtResource("6_okkre")
+
+[node name="UnlockLabel" type="Label" parent="LevelBackground4/LockedControl"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 238.0
+offset_bottom = 356.0
+theme_override_fonts/font = ExtResource("8_8q45q")
+text = "Unlock with a high score of 50,000"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level4Button" type="Button" parent="LevelBackground4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 365.0
+offset_right = 242.0
+offset_bottom = 446.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pf756")
+disabled = true
+icon = ExtResource("4_5kene")
+flat = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="LevelBackground1/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="LevelBackground2/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="LevelBackground3/Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="LevelBackground4/Level4Button" to="." method="_on_level_4_button_pressed"]
