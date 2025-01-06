@@ -12,7 +12,7 @@ var alive: bool
 func _ready() -> void:
 	alive = true
 	$AnimatedSprite2D.play(Global.save_state.bird)
-	$AnimatedSprite2D.play(Global.bird)
+	$FwooshParticles.set_texture(Global.save_state.fwoosh_texture)
 
 func _physics_process(_delta: float) -> void:
 	if self.alive:

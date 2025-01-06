@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://4h6r5ua0xumx"]
+[gd_scene load_steps=10 format=3 uid="uid://4h6r5ua0xumx"]
 
 [ext_resource type="Script" path="res://Menus/character_select_menu.gd" id="1_32wcj"]
 [ext_resource type="Texture2D" uid="uid://y2wmj7pheuhy" path="res://Art/Backgrounds/4.png" id="1_nre6n"]
@@ -7,6 +7,17 @@
 [ext_resource type="SpriteFrames" uid="uid://cusxl5pvheuma" path="res://Characters/charcter_animations.tres" id="5_lry43"]
 [ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="6_xf8et"]
 [ext_resource type="AudioStream" uid="uid://djxybyeilho4a" path="res://Art/Sounds/Choppin.ogg" id="7_racgn"]
+[ext_resource type="Texture2D" uid="uid://c6k85e1w46nxk" path="res://Art/FwooshTextures/default.png" id="8_dubej"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cr63i"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 90.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.1
+scale_max = 0.3
 
 [node name="CharacterSelectMenu" type="Node2D"]
 script = ExtResource("1_32wcj")
@@ -28,41 +39,20 @@ offset_right = 800.0
 offset_bottom = 715.0
 texture = ExtResource("1_nre6n")
 
-[node name="LeftButton" type="Button" parent="."]
-offset_left = 288.0
-offset_top = 264.0
-offset_right = 354.0
-offset_bottom = 330.0
-icon = ExtResource("3_v22aw")
+[node name="BirdSelectControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 250.0
+offset_top = 71.0
+offset_right = 902.0
+offset_bottom = 245.0
 
-[node name="RightButton" type="Button" parent="."]
-offset_left = 856.0
-offset_top = 256.0
-offset_right = 922.0
-offset_bottom = 322.0
-icon = ExtResource("4_5g20d")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(600, 296)
-sprite_frames = ExtResource("5_lry43")
-animation = &"duck_norris"
-
-[node name="SelectButton" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 424.0
-offset_right = 764.0
-offset_bottom = 506.0
-theme_override_colors/font_color = Color(0.490196, 0.784314, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_xf8et")
-theme_override_font_sizes/font_size = 64
-text = "SELECT"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 320.0
-offset_top = 64.0
-offset_right = 868.0
-offset_bottom = 176.0
+[node name="BirdLabel" type="Label" parent="BirdSelectControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = -35.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.933333, 0.258824, 0.67451, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_xf8et")
@@ -71,11 +61,94 @@ text = "hue birdman"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BirdSelectControl"]
+position = Vector2(329, 83)
+sprite_frames = ExtResource("5_lry43")
+animation = &"duck_norris"
+
+[node name="RightButton" type="Button" parent="BirdSelectControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("4_5g20d")
+
+[node name="LeftButton" type="Button" parent="BirdSelectControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_right = 66.0
+offset_bottom = 33.0
+grow_vertical = 2
+icon = ExtResource("3_v22aw")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_racgn")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
-[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[node name="ParticleSelectControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 250.0
+offset_top = 295.0
+offset_right = 902.0
+offset_bottom = 469.0
+
+[node name="ParticleRightButton" type="Button" parent="ParticleSelectControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("4_5g20d")
+
+[node name="ParticleLeftButton" type="Button" parent="ParticleSelectControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_right = 66.0
+offset_bottom = 33.0
+grow_vertical = 2
+icon = ExtResource("3_v22aw")
+
+[node name="FwooshParticlePreview" type="GPUParticles2D" parent="ParticleSelectControl"]
+position = Vector2(326, 87)
+amount = 80
+process_material = SubResource("ParticleProcessMaterial_cr63i")
+texture = ExtResource("8_dubej")
+lifetime = 5.0
+
+[node name="SelectButton" type="Button" parent="."]
+offset_left = 418.0
+offset_top = 537.0
+offset_right = 734.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.490196, 0.784314, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_xf8et")
+theme_override_font_sizes/font_size = 64
+text = "SELECT"
+
+[connection signal="pressed" from="BirdSelectControl/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="BirdSelectControl/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="ParticleSelectControl/ParticleRightButton" to="." method="_on_particle_right_button_pressed"]
+[connection signal="pressed" from="ParticleSelectControl/ParticleLeftButton" to="." method="_on_particle_left_button_pressed"]
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

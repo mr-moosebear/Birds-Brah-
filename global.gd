@@ -11,7 +11,6 @@ var selected_level: PackedScene
 const LOCAL_LEADERBOARD_PATH: String = "user://leaderboard_local.json"
 
 #var score = 0
-var bird : String = "huebird"
 var score : int = 0
 var gap : int
 var high_score : int
