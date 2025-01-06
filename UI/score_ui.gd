@@ -33,7 +33,7 @@ func update_score() -> void:
 
 func _on_timer_timeout() -> void:
 	if do_accumulate:
-		Global.score_signal.emit(10000)
+		Global.score_signal.emit(1000)
 
 func _on_bird_character_hit():
 	self.do_accumulate = false
