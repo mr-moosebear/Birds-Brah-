@@ -1,6 +1,6 @@
 class_name Bird
 
-enum BirdType {HUE, DUCK, KIWI, FEATHER, EMU}
+enum BirdType {HUE, DUCK, FEATHER, EMU, KIWI}
 var type: BirdType
 
 func _init(type: BirdType):
@@ -19,9 +19,9 @@ static func from_name(name: String) -> Bird:
 func unlock_req() -> int:
 	match self.type:
 		BirdType.DUCK:    return 15000
-		BirdType.KIWI:    return 25000
 		BirdType.FEATHER: return 40000
 		BirdType.EMU:     return 50000
+		BirdType.KIWI:    return 100000
 	return 0
 
 func is_unlocked() -> bool:
