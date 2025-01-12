@@ -7,6 +7,9 @@ var rect_width: int
 var rect_y: int
 var active: bool
 
+func set_texture(t: Texture2D):
+	self.scroll_rect.texture = t
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var vp_width = get_viewport().get_visible_rect().end[0]

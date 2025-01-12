@@ -5,10 +5,21 @@
 [ext_resource type="AudioStream" uid="uid://bwai2xkej0djw" path="res://Art/Sounds/ActandContemplate.ogg" id="3_yispx"]
 
 [sub_resource type="GDScript" id="GDScript_full6"]
-script/source = "extends Node2D
+script/source = "extends BaseLevel
 
-func stop_scroller():
-	$Scroller.active = false
+# Level 3:
+# Permanently dodgable laser spawns after 15,000 pts.
+# Missiles spawn every 10 seconds.
+
+func _ready():
+	scroller = $Scroller
+
+func _on_missile_timer_timeout():
+	spawn_missile()
+
+func on_score(_score):
+	if lasers.size() < 1 && Global.score >= 15_000:
+		spawn_laser()
 "
 
 [node name="LevelThree" type="Node2D"]
@@ -33,3 +44,9 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_yispx")
 parameters/looping = true
+
+[node name="MissileTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]

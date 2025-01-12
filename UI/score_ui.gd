@@ -9,7 +9,8 @@ const FLOATER_DECAY_PER_SECOND = 1500
 
 func _ready():
 	self.do_accumulate = true 
-	Global.score_signal.connect(_on_global_score)
+	Global.signal_bus.score.connect(_on_global_score)
+	Global.signal_bus.bird_hit.connect(_on_bird_character_hit)
 
 func _process(delta: float) -> void:
 	# apply bouncy affect to score background sprite
@@ -33,7 +34,7 @@ func update_score() -> void:
 
 func _on_timer_timeout() -> void:
 	if do_accumulate:
-		Global.score_signal.emit(1000)
+		Global.signal_bus.score.emit(1000)
 
 func _on_bird_character_hit():
 	self.do_accumulate = false

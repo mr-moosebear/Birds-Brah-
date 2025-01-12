@@ -4,12 +4,10 @@ const JUMP_VELOCITY = -400.0
 const SPEED : float = 300
 const ROTATION_DEG_MAX = 20
 
-signal hit
-signal death_animation_finished
-
 var alive: bool
 
 func _ready() -> void:
+	Global.signal_bus.bird_hit.connect(_on_hit)
 	alive = true
 	$AnimatedSprite2D.play(Global.save_state.bird.animation_name())
 
@@ -25,17 +23,17 @@ func get_input() -> void:
 		Global.save_state.fwoosh_config.fwoosh(self)
 		[$Fwoosh1Player, $Fwoosh2Player][randi() % 2].play()
 		velocity.y = JUMP_VELOCITY
-		Global.score_signal.emit(100)
+		Global.signal_bus.score.emit(100)
 	if Input.is_action_just_pressed("forward"):
 		velocity.x = SPEED
 
 func _on_hit():
 	self.alive = false
+	$AnimatedSprite2D.play("death")
+	$AnimatedSprite2D.animation_finished.connect(Global.signal_bus.bird_death_finished.emit)
+# Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred("disabled", true)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("object"):
-		hit.emit()
-		$AnimatedSprite2D.play("death")
-		$AnimatedSprite2D.animation_finished.connect(death_animation_finished.emit)
-# Must be deferred as we can't change physics properties on a physics callback.
-		$CollisionShape2D.set_deferred("disabled", true)
+		Global.signal_bus.bird_hit.emit()

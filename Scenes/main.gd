@@ -2,9 +2,13 @@ extends Node2D
 
 @onready var character : CharacterBody2D = $BirdCharacter
 @onready var collider : CollisionShape2D = $BirdCharacter/CollisionShape2D
-@onready var loaded_level = Global.selected_level.instantiate()
+var loaded_level : Node
 
 func _ready():
+	Global.signal_bus.bird_hit.connect(_on_bird_character_hit)
+	Global.signal_bus.bird_death_finished.connect(_on_bird_character_death_animation_finished)
+	loaded_level = Global.selected_level.instantiate()
+	loaded_level.setup(character)
 	add_child(loaded_level)
 
 func add_game_over_scene() -> void:

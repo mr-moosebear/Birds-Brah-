@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://civfrs8hk0lfm"]
+
+[ext_resource type="Script" path="res://Characters/missile_scene.gd" id="1_w7qcd"]
+[ext_resource type="SpriteFrames" uid="uid://cusxl5pvheuma" path="res://Characters/charcter_animations.tres" id="2_q786i"]
+[ext_resource type="Texture2D" uid="uid://00oqjfs65fjc" path="res://Art/UserInterfaces/ChatBubble.png" id="3_hsx4j"]
+[ext_resource type="FontFile" uid="uid://cu25dp320eih4" path="res://Art/Fonts/Kaph-Regular.otf" id="4_tgtwt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5b117"]
+radius = 25.22
+
+[node name="MissileScene" type="Node2D"]
+top_level = true
+script = ExtResource("1_w7qcd")
+
+[node name="MissileBird" type="Node2D" parent="."]
+position = Vector2(157, -764)
+rotation = 0.785398
+
+[node name="RigidBody2D" type="StaticBody2D" parent="MissileBird"]
+position = Vector2(-576, 500)
+rotation = 0.785398
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MissileBird/RigidBody2D"]
+sprite_frames = ExtResource("2_q786i")
+animation = &"kiwi_reeves"
+
+[node name="Area2D" type="Area2D" parent="MissileBird/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissileBird/RigidBody2D/Area2D"]
+position = Vector2(17, 2)
+shape = SubResource("CircleShape2D_5b117")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="MissileBird/RigidBody2D/Area2D/CollisionShape2D"]
+rect = Rect2(-63, -50, 100, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissileBird/RigidBody2D"]
+position = Vector2(17, 2)
+shape = SubResource("CircleShape2D_5b117")
+
+[node name="WarningTexture" type="TextureRect" parent="."]
+offset_left = 104.0
+offset_top = -8.0
+offset_right = 336.0
+offset_bottom = 167.0
+texture = ExtResource("3_hsx4j")
+
+[node name="WarningLabel" type="Label" parent="WarningTexture"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 13.0
+offset_right = 215.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("4_tgtwt")
+theme_override_font_sizes/font_size = 120
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlinkTimer" type="Timer" parent="WarningTexture"]
+wait_time = 0.25
+autostart = true
+
+[node name="SwoopTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="MissileBird/RigidBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="MissileBird/RigidBody2D/Area2D/CollisionShape2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="WarningTexture/BlinkTimer" to="." method="_on_blink_timer_timeout"]
+[connection signal="timeout" from="SwoopTimer" to="." method="_on_swoop_timer_timeout"]

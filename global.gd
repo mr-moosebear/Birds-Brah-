@@ -1,7 +1,5 @@
 extends Node
 
-signal score_signal
-
 var local_leaderboard: LocalLeaderboard
 var save_state: SaveState
 
@@ -9,6 +7,8 @@ var local_leaderboard_view_idx: int = 0 # the placement the leaderboard view sho
 var selected_level: PackedScene
 
 const LOCAL_LEADERBOARD_PATH: String = "user://leaderboard_local.json"
+
+var signal_bus = SignalBus.new()
 
 #var score = 0
 var score : int = 0
@@ -26,7 +26,7 @@ func _ready():
 	# load the local leaderboard
 	local_leaderboard = LocalLeaderboard.load_from_path(LOCAL_LEADERBOARD_PATH)
 	
-	self.score_signal.connect(_on_score)
+	Global.signal_bus.score.connect(_on_score)
 
 func _on_score(score: int):
 	Global.score += score

@@ -5,10 +5,10 @@
 [ext_resource type="AudioStream" uid="uid://bwai2xkej0djw" path="res://Art/Sounds/ActandContemplate.ogg" id="3_u8pvo"]
 
 [sub_resource type="GDScript" id="GDScript_full6"]
-script/source = "extends Node2D
+script/source = "extends BaseLevel
 
-func stop_scroller():
-	$Scroller.active = false
+func _ready():
+	scroller = $Scroller
 "
 
 [node name="LevelFour" type="Node2D"]

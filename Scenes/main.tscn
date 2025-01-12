@@ -18,7 +18,4 @@ autostart = true
 
 [node name="Obstacles" type="Node" parent="."]
 
-[connection signal="death_animation_finished" from="BirdCharacter" to="." method="_on_bird_character_death_animation_finished"]
-[connection signal="hit" from="BirdCharacter" to="." method="_on_bird_character_hit"]
-[connection signal="hit" from="BirdCharacter" to="ScoreUI" method="_on_bird_character_hit"]
 [connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]
