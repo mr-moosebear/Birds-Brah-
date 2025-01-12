@@ -87,12 +87,19 @@ func _process(delta):
 				set_state(LaserState.Inactive)
 				# lost lock
 		LaserState.Firing:
-			if time_spent_in_state() >= 1500:
+			$Label.set_visible(true)
+			var charge_time_left = 1500 - time_spent_in_state()
+			var charge_time_left_clamp = clamp(charge_time_left, 0, 1500)
+			$Label.text = str(charge_time_left_clamp / 100)
+			$Label.add_theme_color_override("font_color", Color(1.0 - (charge_time_left_clamp / 1500.0) * 0.5, 0, 0, 1))
+			if charge_time_left <= 0:
+				$Label.text = "FIRE"
 				if laser_collided:
 					set_state(LaserState.Inactive)
 					# hit!
 					Global.signal_bus.bird_hit.emit()
 				else:
+					$Label.set_visible(false)
 					set_state(LaserState.Inactive)
 					# missed
 					if self.impossible_countdown > 0:
