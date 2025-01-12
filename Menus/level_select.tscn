@@ -22,27 +22,26 @@
 script = ExtResource("1_wftfg")
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
-offset_top = -67.0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 715.0
 texture = ExtResource("1_gg5uk")
 stretch_mode = 1
 
 [node name="BackButton" type="Button" parent="."]
-texture_filter = 5
+texture_filter = 6
 offset_left = 14.0
-offset_top = 533.0
+offset_top = 600.0
 offset_right = 80.0
-offset_bottom = 599.0
+offset_bottom = 666.0
 scale = Vector2(1.5, 1.5)
 icon = ExtResource("2_wil67")
 flat = true
 
 [node name="LevelBackground1" type="TextureRect" parent="."]
 offset_left = 22.0
-offset_top = 43.0
+offset_top = 95.0
 offset_right = 265.0
-offset_bottom = 488.0
+offset_bottom = 540.0
 texture = ExtResource("2_oft5f")
 stretch_mode = 2
 
@@ -64,9 +63,9 @@ flat = true
 
 [node name="LevelBackground2" type="TextureRect" parent="."]
 offset_left = 310.0
-offset_top = 43.0
+offset_top = 95.0
 offset_right = 553.0
-offset_bottom = 488.0
+offset_bottom = 540.0
 texture = ExtResource("2_oft5f")
 
 [node name="Preview" type="TextureRect" parent="LevelBackground2"]
@@ -112,9 +111,9 @@ flat = true
 
 [node name="LevelBackground3" type="TextureRect" parent="."]
 offset_left = 598.0
-offset_top = 43.0
+offset_top = 95.0
 offset_right = 841.0
-offset_bottom = 488.0
+offset_bottom = 540.0
 texture = ExtResource("2_oft5f")
 
 [node name="Preview" type="TextureRect" parent="LevelBackground3"]
@@ -161,9 +160,9 @@ flat = true
 
 [node name="LevelBackground4" type="TextureRect" parent="."]
 offset_left = 886.0
-offset_top = 43.0
+offset_top = 95.0
 offset_right = 1129.0
-offset_bottom = 488.0
+offset_bottom = 540.0
 texture = ExtResource("2_oft5f")
 
 [node name="Preview" type="TextureRect" parent="LevelBackground4"]

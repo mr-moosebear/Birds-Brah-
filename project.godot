@@ -21,6 +21,7 @@ Global="*res://global.gd"
 
 [display]
 
+window/size/viewport_height=715
 window/size/resizable=false
 
 [global_group]
