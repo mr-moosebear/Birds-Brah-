@@ -35,7 +35,6 @@ func fwoosh(parent: Node2D):
 	particles.lifetime = 2
 	particles.explosiveness = 1.0
 	particles.randomness = 1.0
-	particles.trail_enabled = true
 	parent.add_child(particles)
 
 func alias_index() -> int:
