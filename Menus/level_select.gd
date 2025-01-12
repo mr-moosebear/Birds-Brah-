@@ -3,13 +3,13 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var high_score = Global.local_leaderboard.get_high_score()
-	if high_score >= 15000:
+	if high_score >= 30000:
 		$LevelBackground2/LockedControl.set_visible(false)
 		$LevelBackground2/Level2Button.set_disabled(false)
-	if high_score >= 30000:
+	if high_score >= 60000:
 		$LevelBackground3/LockedControl.set_visible(false)
 		$LevelBackground3/Level3Button.set_disabled(false)
-	if high_score >= 50000:
+	if high_score >= 90000:
 		$LevelBackground4/LockedControl.set_visible(false)
 		$LevelBackground4/Level4Button.set_disabled(false)
 
