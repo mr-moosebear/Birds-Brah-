@@ -1,28 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cisi06toscbnv"]
+[gd_scene load_steps=8 format=3 uid="uid://cisi06toscbnv"]
 
 [ext_resource type="Script" path="res://Components/GravityComponent.gd" id="1_4bwvj"]
 [ext_resource type="SpriteFrames" uid="uid://cusxl5pvheuma" path="res://Characters/charcter_animations.tres" id="1_7rv8b"]
 [ext_resource type="Script" path="res://Characters/bird_character.gd" id="1_wq6ey"]
 [ext_resource type="AudioStream" uid="uid://b3ppf6k8axshv" path="res://Art/Sounds/Fwoosh1.ogg" id="4_d0yx1"]
 [ext_resource type="AudioStream" uid="uid://de7kwuckws3rx" path="res://Art/Sounds/Fwoosh2.ogg" id="5_x58ec"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kp18m"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-angle_min = -720.0
-angle_max = 720.0
-direction = Vector3(-1, 1, 0)
-spread = 70.0
-initial_velocity_min = 364.97
-initial_velocity_max = 463.51
-angular_velocity_min = -80.0
-angular_velocity_max = 80.0
-gravity = Vector3(0, 98, 0)
-scale_min = 0.1
-scale_max = 0.3
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.00999998
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljif3"]
 radius = 24.0
@@ -41,15 +23,6 @@ character = NodePath("..")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_7rv8b")
 animation = &"death"
-
-[node name="FwooshParticles" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 16
-process_material = SubResource("ParticleProcessMaterial_kp18m")
-lifetime = 2.0
-one_shot = true
-explosiveness = 1.0
-randomness = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 0)

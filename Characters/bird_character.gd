@@ -11,8 +11,7 @@ var alive: bool
 
 func _ready() -> void:
 	alive = true
-	$AnimatedSprite2D.play(Global.save_state.bird)
-	$FwooshParticles.set_texture(Global.save_state.fwoosh_texture)
+	$AnimatedSprite2D.play(Global.save_state.bird.animation_name())
 
 func _physics_process(_delta: float) -> void:
 	if self.alive:
@@ -23,9 +22,7 @@ func _physics_process(_delta: float) -> void:
 func get_input() -> void:
 	if Input.is_action_just_pressed("flap"):
 		$AnimatedSprite2D.set_frame(17)
-		var new_particles = $FwooshParticles.duplicate()
-		new_particles.emitting = true
-		add_child(new_particles)
+		Global.save_state.fwoosh_config.fwoosh(self)
 		[$Fwoosh1Player, $Fwoosh2Player][randi() % 2].play()
 		velocity.y = JUMP_VELOCITY
 		Global.score_signal.emit(100)
