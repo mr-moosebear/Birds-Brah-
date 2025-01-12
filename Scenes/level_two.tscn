@@ -17,7 +17,8 @@ func _ready():
 	Global.signal_bus.score.connect(on_score)
 
 func _on_laser_spawn_timer_timeout():
-	spawn_laser()
+	var l = spawn_laser()
+	l.set_height(40)
 
 func on_score(_score):
 	if Global.score >= 50_000 && $MissileTimer.is_stopped():

@@ -17,12 +17,13 @@ func spawn_missile():
 		missile.flip()
 	add_child(missile)
 
-func spawn_laser(impossible_countdown: int = -1):
+func spawn_laser(impossible_countdown: int = -1) -> Laser:
 	var new_laser = LASER.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	new_laser.target = self.character
 	new_laser.impossible_countdown = impossible_countdown
 	lasers.append(new_laser)
 	add_child(new_laser)
+	return new_laser
 
 func setup(character: CharacterBody2D):
 	self.character = character
