@@ -11,9 +11,8 @@
 script = ExtResource("1_rfub5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_top = -67.0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 715.0
 texture = ExtResource("2_a1a3b")
 stretch_mode = 1
 
