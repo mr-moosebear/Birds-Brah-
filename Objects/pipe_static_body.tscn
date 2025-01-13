@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3mf3s4myhxhf"]
+[gd_scene load_steps=7 format=3 uid="uid://c3mf3s4myhxhf"]
 
 [ext_resource type="Script" path="res://Objects/pipe_static_body.gd" id="1_mhihk"]
 [ext_resource type="Texture2D" uid="uid://bt0v1q7hf7eo5" path="res://Art/Backgrounds/ObstaclePipeCap.png" id="2_heaww"]
@@ -9,6 +9,9 @@ size = Vector2(84, 546)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qemui"]
 size = Vector2(87, 544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qd2b"]
+size = Vector2(80, 162)
 
 [node name="PipeStaticBody" type="Node2D" groups=["object"]]
 script = ExtResource("1_mhihk")
@@ -80,4 +83,20 @@ shape = SubResource("RectangleShape2D_qemui")
 position = Vector2(120, 378)
 scale = Vector2(1, 6.2)
 
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 81)
+shape = SubResource("RectangleShape2D_4qd2b")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 162.0
+color = Color(1, 0, 0, 0.403922)
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

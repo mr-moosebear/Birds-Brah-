@@ -7,6 +7,7 @@ var loaded_level : Node
 func _ready():
 	Global.signal_bus.bird_hit.connect(_on_bird_character_hit)
 	Global.signal_bus.bird_death_finished.connect(_on_bird_character_death_animation_finished)
+	Global.signal_bus.obstacle_spawn.connect(spawn_pipe_object)
 	loaded_level = Global.selected_level.instantiate()
 	loaded_level.setup(character)
 	add_child(loaded_level)
@@ -23,9 +24,10 @@ func _physics_process(delta):
 
 #NOTE: call_deferred is to remove everthing after 
 # the next physics process
-func spawn_pipe_object() -> void:
+func spawn_pipe_object(dangerous: bool = false) -> void:
 	var scene_path = preload("res://Objects/pipe_static_body.tscn")
 	var scene = scene_path.instantiate()
+	scene.set_dangerous(dangerous)
 	$Obstacles.add_child(scene)
 
 func _on_bird_character_death_animation_finished():

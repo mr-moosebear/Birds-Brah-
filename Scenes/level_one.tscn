@@ -8,7 +8,7 @@
 script/source = "extends BaseLevel
 
 # Level 1:
-# Normal game until 28,000 pts. Laser spawns - after 1 missed shot, becomes impossible
+# Normal game until 28,000 pts. 80px laser spawns - after 1 missed shot, becomes impossible
 # to dodge. Move to level 2 after earning 30,000 pts.
 
 func _ready():
@@ -18,6 +18,9 @@ func _ready():
 func on_score(_score):
 	if lasers.size() < 1 && Global.score >= 28_000:
 		spawn_laser(1)
+
+func _on_obstacle_spawn_timer_timeout():
+	Global.signal_bus.obstacle_spawn.emit()
 "
 
 [node name="LevelOne" type="Node2D"]
@@ -48,4 +51,8 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="ObstacleSpawnTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="LaserSpawnTimer" to="." method="_on_laser_spawn_timer_timeout"]
+[connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]

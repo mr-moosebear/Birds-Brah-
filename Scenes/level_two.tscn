@@ -8,7 +8,7 @@
 script/source = "extends BaseLevel
 
 # Level 2:
-# Permanently dodgable laser spawns after 3 seconds.
+# Permanently dodgable 40px laser spawns after 3 seconds.
 # at 50,000 pts, missiles spawn every 3 seconds. Earn 60,000 pts
 # and move to level 3 for slower missiles.
 
@@ -26,6 +26,9 @@ func on_score(_score):
 
 func _on_missile_timer_timeout():
 	spawn_missile()
+
+func _on_obstacle_spawn_timer_timeout():
+	Global.signal_bus.obstacle_spawn.emit()
 "
 
 [node name="LevelTwo" type="Node2D"]
@@ -59,5 +62,9 @@ autostart = true
 [node name="MissileTimer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="ObstacleSpawnTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="LaserSpawnTimer" to="." method="_on_laser_spawn_timer_timeout"]
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]
+[connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]

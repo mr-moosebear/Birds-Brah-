@@ -7,8 +7,23 @@
 [sub_resource type="GDScript" id="GDScript_full6"]
 script/source = "extends BaseLevel
 
+# Level 4:
+# Permanently dodgable 40px laser from start.
+# Missiles spawn every 15 seconds.
+# 1/3 chance to spawn pipe obstacle with force field.
+
+var laser: Laser
+
 func _ready():
 	scroller = $Scroller
+	self.laser = spawn_laser()
+	self.laser.set_height(40)
+
+func _on_obstacle_spawn_timer_timeout():
+	Global.signal_bus.obstacle_spawn.emit(randi() % 3 == 0)
+
+func _on_missile_spawn_timer_timeout():
+	spawn_missile()
 "
 
 [node name="LevelFour" type="Node2D"]
@@ -33,3 +48,13 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_u8pvo")
 parameters/looping = true
+
+[node name="ObstacleSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="MissileSpawnTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]
+[connection signal="timeout" from="MissileSpawnTimer" to="." method="_on_missile_spawn_timer_timeout"]

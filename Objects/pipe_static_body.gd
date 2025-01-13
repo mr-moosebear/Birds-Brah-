@@ -6,11 +6,22 @@ var screen_size
 var min_y : int
 var max_y : int
 var do_move: bool
+var dangerous = false
 
 func _ready() -> void:
 	do_move = true
 	position = get_random_spawn_position()
 	place_bottom_pipe()
+	place_center_colshape()
+
+func set_dangerous(flag: bool):
+	self.dangerous = flag
+	$Area2D.set_visible(flag)
+
+func place_center_colshape():
+	$Area2D/CollisionShape2D.shape.set_size(Vector2(80, Global.gap))
+	$Area2D/CollisionShape2D.set_position(Vector2(0, Global.gap / 2))
+	$Area2D/ColorRect.set_size(Vector2(80, Global.gap))
 
 func _process(_delta: float) -> void:
 	if do_move:
@@ -36,3 +47,11 @@ func place_bottom_pipe() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+
+func _on_area_2d_mouse_entered():
+	$Area2D/ColorRect.color = Color(0, 0, 0, 0)
+	self.dangerous = false
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("player") && self.dangerous:
+		Global.signal_bus.bird_hit.emit()

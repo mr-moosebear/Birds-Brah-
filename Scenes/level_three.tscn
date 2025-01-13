@@ -8,18 +8,31 @@
 script/source = "extends BaseLevel
 
 # Level 3:
-# Permanently dodgable laser spawns after 15,000 pts.
+# Permanently dodgable 40px laser spawns after 15,000 pts.
+# Laser grows to 80 px after 80,000 pts
 # Missiles spawn every 10 seconds.
+# 1/10 chance to spawn pipe obstacle with force field.
+
+var laser: Laser
 
 func _ready():
 	scroller = $Scroller
+
+func _process(delta):
+	if Global.score >= 80_000 && self.laser.height < 80:
+		self.laser.set_height(clamp(self.laser.height + 40 * delta, 40, 80))
 
 func _on_missile_timer_timeout():
 	spawn_missile()
 
 func on_score(_score):
 	if lasers.size() < 1 && Global.score >= 15_000:
-		spawn_laser()
+		self.laser = spawn_laser()
+		self.laser.set_height(40)
+
+
+func _on_obstacle_spawn_timer_timeout():
+	Global.signal_bus.obstacle_spawn.emit(randi() % 10 == 0)
 "
 
 [node name="LevelThree" type="Node2D"]
@@ -49,4 +62,8 @@ parameters/looping = true
 wait_time = 10.0
 autostart = true
 
+[node name="ObstacleSpawnTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]
+[connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]
